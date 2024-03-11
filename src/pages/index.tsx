@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { useVideoAndDarkMode } from './utils';
+import { useVideoAndDarkMode } from '../utils';
 import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
 import sticky_luffy from "../../public/sticky_luffy.png";
 import dragon from "../../public/dragon.png"

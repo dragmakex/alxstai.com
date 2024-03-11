@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useVideoAndDarkMode } from './utils';
+import { useVideoAndDarkMode } from '../utils';
 import Dropdown from "./dropdown";
 import { BsFillMoonStarsFill, BsFillSunFill, BsCameraVideoOffFill, BsCameraVideoFill } from 'react-icons/bs';
 

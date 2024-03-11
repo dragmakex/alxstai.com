@@ -29,7 +29,7 @@ export default function Home(props: HomeProps) {
   return (
     <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''} `}>      
       <Head>
-        <title> alxstai </title>
+        <title> about alx </title>
         <meta name="" content=""></meta>
         <link rel="icon" href="/favicon.png"/>
       </Head>        
@@ -69,7 +69,7 @@ export default function Home(props: HomeProps) {
               </h4>
              </div>
         </div>*/}
-            <div className={`text-5xl md:text-7xl text-center font-tisa_bold font-bold dark:text-gray-400 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>Hi 👋, I'm Alex</div>
+            <div className={`text-5xl md:text-7xl text-center font-tisa_bold font-bold md:mt-0 mt-14 dark:text-gray-400 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>Hi 👋, I'm Alex</div>
             <div className={`inset-0 border-8 border-gray-400 dark:border-white flex items-center relative mx-auto rounded-full w-80 h-80 mt-10 mb-10 overflow-hidden md:h-96 md:w-96 dark:bg-gray-400 bg-black transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
                 <Image src={sticky_luffy} fill objectFit="cover" alt={'Picture'} className='border-lg border-white'/>
             </div>

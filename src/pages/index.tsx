@@ -7,12 +7,12 @@ import dragon from "../../public/dragon.png"
 import Navbar from './navbar';
 import { useState, useEffect } from 'react';
 
-import {
+{/*import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 
-{/*const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <div>Hello world!</div>,

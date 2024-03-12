@@ -24,7 +24,16 @@ export default function Home(props: HomeProps) {
     setTimeout(() => {
         setLoaded(true);
     }, 1000);
+
+    useEffect(() => {
+      console.log(darkMode)
+      document.body.className = darkMode ? 'bg-black' : 'bg-gray-300';
   
+      return () => {
+        document.body.className = '';
+      };
+    }, [darkMode]);
+
   return (
     <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''} `}>      
       <Head>

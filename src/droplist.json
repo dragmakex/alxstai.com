@@ -6,9 +6,5 @@
     {
         "tab": "blog",
         "path": "/blog"
-    },
-    {    
-        "tab": "polyring",
-        "path": "/polyring"
     }
 ]

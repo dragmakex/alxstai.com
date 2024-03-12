@@ -26,10 +26,19 @@ export default function Home(props: HomeProps) {
         setLoaded(true);
     }, 1000);
   
+    useEffect(() => {
+        console.log(darkMode)
+        document.body.className = darkMode ? 'bg-black' : 'bg-gray-300';
+    
+        return () => {
+          document.body.className = '';
+        };
+      }, [darkMode]);
+
   return (
-    <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''} `}>      
+    <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''}`}>      
       <Head>
-        <title> alx blog </title>
+        <title> about alx </title>
         <meta name="" content=""></meta>
         <link rel="icon" href="/favicon.png"/>
       </Head>        
@@ -69,12 +78,12 @@ export default function Home(props: HomeProps) {
               </h4>
              </div>
         </div>*/}
-            <div className={`text-5xl md:text-7xl text-center font-tisa_bold font-bold dark:text-gray-400 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>Hi 👋, I'm Alex</div>
-            <div className={`inset-0 border-8 border-gray-400 dark:border-white flex items-center relative mx-auto rounded-full w-80 h-80 mt-10 mb-10 overflow-hidden md:h-96 md:w-96 dark:bg-gray-400 bg-black transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
+            <div className={`text-5xl md:text-6xl text-center font-tisa_bold font-bold md:mt-0 mt-8 dark:text-gray-400 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>Hi 👋, I'm Alex</div>
+            <div className={`inset-0 border-8 border-gray-400 dark:border-white flex items-center relative mx-auto rounded-full w-80 h-80 md:h-96 md:w-96 mt-10 mb-10 overflow-hidden dark:bg-gray-400 bg-black transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
                 <Image src={sticky_luffy} fill objectFit="cover" alt={'Picture'} className='border-lg border-white'/>
             </div>
         
-            <div className={`text-5xl md:text-7xl flex justify-center gap-12 md:gap-16 lg:gap-20 py-3 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
+            <div className={`text-5xl md:text-6xl sm:text-1xl flex justify-center gap-12 md:gap-16 lg:gap-20 py-3 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
                 <a href="https://github.com/dragmakex" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
                 <AiFillGithub />
                 </a>

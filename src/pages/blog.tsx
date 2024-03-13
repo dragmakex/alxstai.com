@@ -1,12 +1,8 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import { useVideoAndDarkMode } from '../utils';
-import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
-import { MdCastle } from "react-icons/md";
-import sticky_luffy from "../../public/sticky_luffy.png";
-import dragon from "../../public/dragon.png"
 import Navbar from '../navbar';
 import { useState, useEffect } from 'react';
+import Post from '../post';
 
 type HomeProps = {
   videoOff: boolean;
@@ -15,11 +11,19 @@ type HomeProps = {
   toggleVideo: () => void;
 }
 
-export default function Home(props: HomeProps) {
+export default function Blog(props: HomeProps) {
   
   const { videoOff, darkMode, toggleDarkMode, toggleVideo} = useVideoAndDarkMode();
 
   const [loaded, setLoaded] = useState(false);
+
+  const [posts, setPosts] = useState([
+    {
+      username: "Alex",
+      message: "Hello world! You can expect tweet-like posts coming soon :)",
+      timestamp: new Date(2024, 2, 13, 16, 3, 38, 0),
+    }
+  ]);
 
     // Set loaded to true after 1000 milliseconds (1 second)
     setTimeout(() => {
@@ -54,6 +58,17 @@ export default function Home(props: HomeProps) {
               <video src='op_bg.mp4' autoPlay loop muted className="w-full h-full object-cover object-center"></video>
             </div>
             )}
+
+          <div className="">
+            {posts.map((post, index) => (
+              <Post
+                key={index}
+                username={post.username}
+                message={post.message}
+                timestamp={post.timestamp}
+              />
+            ))}
+          </div>
         </section>
       </main>
     </div>

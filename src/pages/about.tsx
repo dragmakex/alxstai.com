@@ -14,7 +14,7 @@ type HomeProps = {
   toggleVideo: () => void;
 }
 
-export default function Home(props: HomeProps) {
+export default function About(props: HomeProps) {
   
     const { videoOff, darkMode, toggleDarkMode, toggleVideo} = useVideoAndDarkMode();
 

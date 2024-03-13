@@ -52,7 +52,7 @@ export default function Blog(props: HomeProps) {
   return (
     <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''}`}>      
       <Head>
-        <title> about alx </title>
+        <title> blog alx </title>
         <meta name="" content=""></meta>
         <link rel="icon" href="/favicon.png"/>
       </Head>        

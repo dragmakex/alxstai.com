@@ -30,8 +30,8 @@ function Navbar(props:NavbarProps) {
                     {props.videoOff && (<BsFillSunFill onClick={props.toggleDarkMode} size={25} className='cursor-pointer text-2xl text-gray-400 hidden dark:block active:text-white hover:text-white duration-300'> </BsFillSunFill> )}
                 </li>
                 <li className='flex px-2'>
-                {!props.videoOff && (<BsCameraVideoOffFill onClick={props.toggleVideo} size={25} className='cursor-pointer text-2xl text-black active:text-white hover:text-white duration-300'> </BsCameraVideoOffFill> )}
-                {props.videoOff && (<BsCameraVideoFill onClick={props.toggleVideo} size={25} className='cursor-pointer text-2xl text-black dark:text-gray-400 active:text-white hover:text-white dark:hover:text-white duration-300'> </BsCameraVideoFill> )}
+                {!props.videoOff && (<BsCameraVideoOffFill onClick={props.toggleVideo} size={25} className='cursor-pointer text-2xl 2xl:text-4xl text-black active:text-white hover:text-white duration-300'> </BsCameraVideoOffFill> )}
+                {props.videoOff && (<BsCameraVideoFill onClick={props.toggleVideo} size={25} className='cursor-pointer text-2xl 2xl:text-4xl text-black dark:text-gray-400 active:text-white hover:text-white dark:hover:text-white duration-300'> </BsCameraVideoFill> )}
                 </li>
                 <li>
                     <a className=' flex text-black px-2 ml-5 dark:text-gray-400 '>

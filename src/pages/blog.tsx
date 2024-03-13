@@ -69,7 +69,7 @@ export default function Blog(props: HomeProps) {
             </div>
             )}
 
-          <div className="">
+          <div className="mt-10">
             {posts.map((post, index) => (
               <Post
                 key={index}

@@ -75,7 +75,7 @@ export default function About(props: HomeProps) {
             </div>
             )}
 
-            <div className={`text-4xl md:text-6xl text-center font-tisa_bold font-bold md:mt-0 mt-8 dark:text-gray-400 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>Hi 👋, I'm <span onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} style={hover ? hoverStyle : normalStyle}>Alex</span></div>
+            <div className={`text-4xl md:text-6xl text-center font-tisa_bold font-bold md:mt-0 mt-6 dark:text-gray-400 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>Hi 👋, I'm <span onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} style={hover ? hoverStyle : normalStyle}>Alex</span></div>
             <div className={`inset-0 border-8 border-gray-400 dark:border-white flex items-center relative mx-auto rounded-full w-60 h-60 md:h-96 md:w-96 mt-10 mb-10 overflow-hidden dark:bg-gray-400 bg-black transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
                 <Image src={sticky_luffy} fill objectFit="cover" alt={'Picture'} className='border-lg border-white'/>
             </div>

@@ -5,7 +5,7 @@ import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/a
 import { MdCastle } from "react-icons/md";
 import sticky_luffy from "../../public/sticky_luffy.png";
 import Navbar from '../navbar';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 type HomeProps = {
   videoOff: boolean;
@@ -29,6 +29,16 @@ export default function About(props: HomeProps) {
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
     };
+    
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+      if (videoRef.current) {
+        videoRef.current.play().catch(error => {
+          console.error("Video autoplay failed:", error);
+        });
+      }
+    }, []);
 
     // Set loaded to true after 1000 milliseconds (1 second)
     setTimeout(() => {
@@ -61,7 +71,7 @@ export default function About(props: HomeProps) {
           </canvas>
             {!videoOff && (
             <div className="fixed top-0 left-0 w-full h-full z-[-10]">
-              <video src='op_bg.mp4' autoPlay loop muted className="w-full h-full object-cover object-center"></video>
+              <video ref={videoRef} src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>
             </div>
             )}
 

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useVideoAndDarkMode } from '../utils';
 import Navbar from '../navbar';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 type HomeProps = {
   videoOff: boolean;
@@ -16,19 +16,29 @@ export default function Home(props: HomeProps) {
 
   const [loaded, setLoaded] = useState(false);
 
-    // Set loaded to true after 1000 milliseconds (1 second)
-    setTimeout(() => {
-        setLoaded(true);
-    }, 1000);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
-      console.log(darkMode)
-      document.body.className = darkMode ? 'bg-black' : 'bg-gray-300';
-  
-      return () => {
-        document.body.className = '';
-      };
-    }, [darkMode]);
+      if (videoRef.current) {
+        videoRef.current.play().catch(error => {
+          console.error("Video autoplay failed:", error);
+        });
+      }
+    }, []);
+
+  // Set loaded to true after 1000 milliseconds (1 second)
+  setTimeout(() => {
+      setLoaded(true);
+  }, 1000);
+
+  useEffect(() => {
+    console.log(darkMode)
+    document.body.className = darkMode ? 'bg-black' : 'bg-gray-300';
+
+    return () => {
+      document.body.className = '';
+    };
+  }, [darkMode]);
 
   return (
     <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''} `}>      
@@ -48,7 +58,7 @@ export default function Home(props: HomeProps) {
           </canvas>
             {!videoOff && (
             <div className="fixed top-0 left-0 w-full h-full z-[-10]">
-              <video src='op_bg.mp4' autoPlay loop muted className="w-full h-full object-cover object-center"></video>
+              <video src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>
             </div>
             )}
         </section>

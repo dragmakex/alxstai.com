@@ -84,7 +84,7 @@ export default function About(props: HomeProps) {
                   </a>
               </div>
             </div>
-
+            
         </section>
       </main>
     </div>

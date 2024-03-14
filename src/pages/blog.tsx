@@ -22,6 +22,11 @@ export default function Blog(props: HomeProps) {
       username: "Alex",
       message: "Hello world! You can expect tweet-like posts coming soon :)",
       timestamp: new Date(2024, 2, 13, 16, 3, 38, 0),
+    },
+    {
+      username: "Alex",
+      message: "Happy π-day! That's all.",
+      timestamp: new Date(2024, 2, 14, 15, 40, 34, 0),
     }
   ]);
 

@@ -1,0 +1,219 @@
+---
+permalink: 'embed.js'
+---
+{% terser %}
+const THEME_FOLDER_URL = "https://polyring.ch/assets/themes/";
+const MEMBERS = {% include "src/data/members.json" %};
+
+class WebringBanner extends HTMLElement {
+
+    // lookup table for available themes
+    themes = {
+      default: THEME_FOLDER_URL + "default.json",
+      dark: THEME_FOLDER_URL + "dark.json",
+      solarized: THEME_FOLDER_URL + "solarized.json",
+      ugly: THEME_FOLDER_URL + "ugly.json"
+    }
+
+    constructor() {
+        super();
+
+        this.ringtitle = '{{ meta.title }}';
+        this.url = '{{ meta.url }}';
+        this.image = this.url + '/assets/images/{{ meta.image }}';
+        this.shadowObj = this.attachShadow({ mode: 'open' });
+
+        const siteIndex = MEMBERS.findIndex(
+          (site) => site.url.includes(window.location.hostname)
+        );
+
+        this.previousUrl = siteIndex < 1 ? MEMBERS[MEMBERS.length - 1].url : MEMBERS[siteIndex - 1].url;
+        this.nextUrl = siteIndex >= MEMBERS.length - 1 ? MEMBERS[0].url : MEMBERS[siteIndex + 1].url;
+
+        this.render();
+    }
+
+    static get observedAttributes() {
+      return ['theme'];
+    }
+
+    getStyles() {
+        return `
+        <style>
+          * {
+            box-sizing: border-box;
+          }
+        
+          :root {
+            font-size: 100%;
+          }
+
+          :host {
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            text-align: left;
+          }
+  
+          .webring-banner {
+            background-color: var(--background-color, #FFF);
+            border: 1px solid var(--outer-border-color, #DDD);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
+            max-width: 480px;
+          }
+
+          .webring-banner a {
+            color: var(--href-color, #7b16ff);
+            text-decoration: none;
+            transition: 0.5s ease;
+          }
+
+          .webring-banner a:hover,
+          .webring-banner a:focus {
+            color: var(--href-color-active, #6200e2);
+            text-decoration: underline;
+          }
+
+          .webring-banner__header {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            padding: 1rem;
+            border-bottom: 1px solid var(--inner-border-color, #DDD);
+          }
+
+          .webring-banner__description {
+            flex: 1 0 0%;
+            padding-right: 2rem;
+            color: var(--text-color, #444);
+          }
+
+          .webring-banner__image {
+            display: block;
+            width: 70px;
+            height: 70px;
+            margin-right: 1rem;
+            border-radius: 50%;
+          } 
+
+          .webring-banner_text {
+            line-height:0%;
+            -inkscape-font-specification:'Comfortaa, Normal';
+            text-align:start
+            font-weight="400";
+            font-size="16.933";
+            font-family="Comfortaa";
+            letter-spacing="0" word-spacing="0";
+          }
+
+          .webring-banner__title {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1.2;
+          }
+
+          .webring-banner__info {
+            display: flex;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid var(--inner-border-color, #DDD);
+            width: 1.25rem;
+            height: 1.25rem;
+            line-height: 1.25rem;
+            font-size: .75rem;
+            text-align: center;
+            color: #666;
+            text-decoration: none;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+          }
+
+          .webring-banner__links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 1rem;
+            margin: 0;
+          }
+
+          .webring-banner__link.a {
+            display: block;
+            text-decoration: none;
+            color: var(--href-color, #00ad9f);
+          }
+
+          .webring-banner__link--next {
+            text-align: right;
+          }
+
+          @media (min-width:400px) {
+            .webring-banner__link {
+                min-width: 100px;
+            }
+            .webring-banner__info {
+                align-items: center;
+            }
+          }
+        </style>
+      `;
+    }
+
+    getTemplate() {
+        return `
+          ${this.getStyles()}
+          <div class="webring-banner">
+            <div class="webring-banner__header">
+              {{ "/src/assets/images/polyring_icon.min.svg" | svgContents("webring-banner__image") | safe }}              
+              <div class="webring-banner__description">
+                <span>This site is part of</span>
+                <h3 class="webring-banner__title">
+                  <a href="${this.url}">${this.ringtitle}</a>
+                </h3>
+                <span>A webring with ${MEMBERS.length} members</span>
+              </div>
+              <a class="webring-banner__info" href="https://en.wikipedia.org/wiki/Webring" title="What's this?">?</a>
+            </div>
+            <p class="webring-banner__links">
+              <a 
+                href="${this.previousUrl}" 
+                class="webring-banner__link webring-banner__link--prev" 
+                aria-label="Go to previous site"
+              >Previous</a>
+              <a
+                href="${this.nextUrl}"
+                class="webring-banner__link webring-banner__link--next"
+                aria-label="Go to next site"
+              >Next</a>
+            </p>
+          </div>
+        `;
+    }
+
+    render() {
+        this.shadowObj.innerHTML = this.getTemplate();
+    }
+
+    attributeChangedCallback(attrName, oldVal, newVal) {
+      if(attrName == "theme" && newVal && oldVal !== newVal) {
+        var url = this.themes[newVal] ?? newVal;
+
+        fetch(url).then(response => response.json())
+            .then(val => {
+                var item;
+                for(item in val) {
+                  this.style.setProperty(item, val[item]);
+                }              
+            }).catch( val => {
+                console.error(val);
+            });  
+      }
+    }
+
+}
+
+customElements.define('webring-banner', WebringBanner);
+{% endterser %}

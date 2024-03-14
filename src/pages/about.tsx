@@ -1,11 +1,12 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { useVideoAndDarkMode } from '../utils';
+import { useVideoAndDarkMode } from '../utils/utils';
 import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
 import { MdCastle } from "react-icons/md";
 import sticky_luffy from "../../public/sticky_luffy.png";
-import Navbar from '../navbar';
+import Navbar from '../utils/navbar';
 import { useState, useEffect, useRef } from 'react';
+import WebringBanner from '@/utils/webring';
 
 type HomeProps = {
   videoOff: boolean;
@@ -84,7 +85,7 @@ export default function About(props: HomeProps) {
                   </a>
               </div>
             </div>
-            
+
         </section>
       </main>
     </div>

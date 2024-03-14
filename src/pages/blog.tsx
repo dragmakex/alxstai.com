@@ -1,8 +1,10 @@
 import Head from 'next/head';
-import { useVideoAndDarkMode } from '../utils';
-import Navbar from '../navbar';
+import { useVideoAndDarkMode } from '../utils/utils';
+import Navbar from '../utils/navbar';
 import { useState, useEffect, useRef } from 'react';
-import Post from '../post';
+import React from 'react';
+import Script from 'next/script';
+import Post from '../utils/post';
 
 type HomeProps = {
   videoOff: boolean;
@@ -19,12 +21,12 @@ export default function Blog(props: HomeProps) {
 
   const [posts, setPosts] = useState([
     {
-      username: "Alex",
+      username: "alex",
       message: "Hello world! You can expect tweet-like posts coming soon :)",
       timestamp: new Date(2024, 2, 13, 16, 3, 38, 0),
     },
     {
-      username: "Alex",
+      username: "alex",
       message: "Happy π-day! That's all.",
       timestamp: new Date(2024, 2, 14, 15, 40, 34, 0),
     }

@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import { useVideoAndDarkMode } from '../utils';
-import Navbar from '../navbar';
+import { useVideoAndDarkMode } from '../utils/utils';
+import Navbar from '../utils/navbar';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
@@ -72,7 +72,7 @@ export default function Home(props: HomeProps) {
             </div>
             )}
 
-          <div className={`text-5xl md:text-8xl 2xl:text-9xl text-center font-tisa_bold font-bold mt-6 py-40 2xl:py-60 dark:text-gray-400 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>Hi 👋, I'm <Link href="/about"><span onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} style={hover ? hoverStyle : normalStyle}>Alex</span></Link></div>
+          <div className={`text-5xl md:text-8xl 2xl:text-9xl text-center font-tisa_bold font-bold mt-6 py-40 2xl:py-60 dark:text-gray-400 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>hi, i'm <Link href="/about"><span onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} style={hover ? hoverStyle : normalStyle}>alex</span></Link></div>
         </section>
       </main>
     </div>

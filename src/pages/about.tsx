@@ -83,8 +83,12 @@ export default function About(props: HomeProps) {
                   <a href="https://twitter.com/dragmakex" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
                   <AiFillTwitterCircle />
                   </a>
+                  <WebringBanner theme='dark' />
               </div>
+              
             </div>
+
+            
 
         </section>
       </main>

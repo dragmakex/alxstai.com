@@ -66,11 +66,11 @@ export default function About(props: HomeProps) {
             </div>
             )}
             <div className='2xl:py-6'>
-              <div className={`inset-0 border-8 border-gray-400 dark:border-white flex items-center relative mx-auto rounded-full w-60 h-60 2xl:h-120 2xl:w-120 mt-8 mb-10 overflow-hidden dark:bg-gray-400 bg-black transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
+              <div className={`inset-0 border-8 border-gray-400 dark:border-white flex items-center relative mx-auto rounded-full w-60 h-60 md:w-90 md:h-90 2xl:h-120 2xl:w-120 mt-10 mb-10 overflow-hidden dark:bg-gray-400 bg-black transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
                   <Image src={sticky_luffy} fill objectFit="cover" alt={'Picture'} className='border-lg border-white'/>
               </div>
           
-              <div className={`text-4xl md:text-5xl lg:text-6xl flex justify-center gap-10 md:gap-16 lg:gap-20 py-3 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
+              <div className={`text-4xl md:text-5xl flex justify-center gap-10 md:gap-16 lg:gap-20 py-4 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
                   <a href="https://github.com/dragmakex" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
                   <AiFillGithub />
                   </a>

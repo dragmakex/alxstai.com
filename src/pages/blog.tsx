@@ -3,8 +3,8 @@ import { useVideoAndDarkMode } from '../utils/utils';
 import Navbar from '../utils/navbar';
 import { useState, useEffect, useRef } from 'react';
 import React from 'react';
-import Script from 'next/script';
 import Post from '../utils/post';
+import WebringBanner from '@/utils/webring';
 
 type HomeProps = {
   videoOff: boolean;
@@ -75,17 +75,26 @@ export default function Blog(props: HomeProps) {
               <video src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>
             </div>
             )}
+          <div>
+            
+            <div className="mt-10">
+              {posts.map((post, index) => (
+                <Post
+                  key={index}
+                  username={post.username}
+                  message={post.message}
+                  timestamp={post.timestamp}
+                />
+              ))}
+            </div>
 
-          <div className="mt-10">
-            {posts.map((post, index) => (
-              <Post
-                key={index}
-                username={post.username}
-                message={post.message}
-                timestamp={post.timestamp}
-              />
-            ))}
+            <div className={`flex justify-center mt-4 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
+                <WebringBanner theme={darkMode ? 'solarized' : 'ugly'}></WebringBanner>
+            </div>
+            
           </div>
+
+          
         </section>
       </main>
     </div>

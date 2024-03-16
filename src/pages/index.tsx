@@ -64,8 +64,6 @@ export default function Home(props: HomeProps) {
         <section className="min-h-screen"> 
           
           <Navbar videoOff={videoOff} darkMode={darkMode} toggleVideo={toggleVideo} toggleDarkMode={toggleDarkMode} />
-          <canvas id='blur' className='fixed top-0 left-0 w-full h-full z-[-9]'>
-          </canvas>
             {!videoOff && (
             <div className="fixed top-0 left-0 w-full h-full z-[-10]">
               <video src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>

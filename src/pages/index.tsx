@@ -17,6 +17,8 @@ export default function Home(props: HomeProps) {
 
   const [loaded, setLoaded] = useState(false);
 
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
   const [hover, setHover] = useState(false);
 
     const normalStyle = { display: 'inline' };
@@ -64,9 +66,16 @@ export default function Home(props: HomeProps) {
         <section className="min-h-screen"> 
           
           <Navbar videoOff={videoOff} darkMode={darkMode} toggleVideo={toggleVideo} toggleDarkMode={toggleDarkMode} />
+              {!isVideoLoaded && (
+              <img
+                src="background.jpg"
+                alt="Loading..."
+                className="w-full h-full object-cover object-center z-[-5] absolute"
+              />
+            )}
             {!videoOff && (
             <div className="fixed top-0 left-0 w-full h-full z-[-10]">
-              <video src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>
+              <video src='op_bg.mp4' autoPlay loop muted playsInline onLoadedData={() => setIsVideoLoaded(true)} className={`w-full h-full object-cover object-center ${isVideoLoaded ? 'z-[-9]' : 'z-[-11]'}`}></video>
             </div>
             )}
 

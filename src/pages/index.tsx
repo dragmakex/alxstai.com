@@ -55,8 +55,27 @@ export default function Home(props: HomeProps) {
     <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''} `}>      
       <Head>
         <title> alxstai </title>
-        <meta name="" content=""></meta>
+        
+        <meta name="apple-mobile-web-app-title" content="alxstai"></meta>
+        <meta name="application-name" content="alxstai"></meta>
+        <meta name="description" content="Starting page of my personal website."></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta charSet="UTF-8"></meta>
+        <meta property="og:title" content="alxstai"></meta>
+        <meta property="og:description" content="Starting page of my personal website."></meta>
+        <meta property="og:image" content="https://alxstai.com"></meta>
+        <meta property="og:url" content="https://alxstai.com"></meta>
+        <meta property="og:type" content="website"></meta>
+        <meta name="twitter:card" content="summary_large_image"></meta>
+        <meta name="twitter:title" content="alxstai"></meta>
+        <meta name="twitter:description" content="Starting page of my personal website."></meta>
+        <meta name="twitter:image" content="https://alxstai.com"></meta>
+        <meta name="robots" content="index, follow"></meta>
+
         <link rel="icon" href="/favicon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
       </Head>        
 
       <main className={`px-10 md:px-20 lg:px-40 dark:bg-black ${videoOff && !darkMode ? 'bg-gray-300' : '' }`}>

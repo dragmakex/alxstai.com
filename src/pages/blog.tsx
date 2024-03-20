@@ -60,8 +60,27 @@ export default function Blog(props: HomeProps) {
     <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''}`}>      
       <Head>
         <title> blog alx </title>
-        <meta name="" content=""></meta>
+
+        <meta name="apple-mobile-web-app-title" content="blog alx"></meta>
+        <meta name="application-name" content="blog alx"></meta>
+        <meta name="description" content="Blog page of my personal website including blog posts and a webring component for Polyring."></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta charSet="UTF-8"></meta>
+        <meta property="og:title" content="blog alx"></meta>
+        <meta property="og:description" content="Blog page of my personal website including blog posts and a webring component for Polyring."></meta>
+        <meta property="og:image" content="https://alxstai.com/blog"></meta>
+        <meta property="og:url" content="https://alxstai.com/blog"></meta>
+        <meta property="og:type" content="website"></meta>
+        <meta name="twitter:card" content="summary_large_image"></meta>
+        <meta name="twitter:title" content="blog alx"></meta>
+        <meta name="twitter:description" content="Blog page of my personal website including blog posts and a webring component for Polyring."></meta>
+        <meta name="twitter:image" content="https://alxstai.com/blog"></meta>
+        <meta name="robots" content="index, follow"></meta>
+
         <link rel="icon" href="/favicon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
       </Head>        
 
       <main className={`px-10 md:px-20 lg:px-40 dark:bg-black ${videoOff && !darkMode ? 'bg-gray-300' : '' }`}>

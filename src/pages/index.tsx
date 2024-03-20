@@ -72,11 +72,8 @@ export default function Home(props: HomeProps) {
         <meta name="twitter:image" content="https://alxstai.com"></meta>
         <meta name="robots" content="index, follow"></meta>
 
-        <link rel="icon" href="/images/favicon.png"/>
         <link rel="icon" href="/images/favicon.ico"/>
         <link rel="shortcut icon" href="/images/favicon.ico"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
 
       </Head>        
 

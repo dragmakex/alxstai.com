@@ -92,7 +92,7 @@ export default function About(props: HomeProps) {
                   <a href="https://linkedin.com/in/astaikov" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
                   <AiFillLinkedin />
                   </a>
-                  <a href="https://far.quest/alxstai" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
+                  <a href="https://warpcast.com/alxstai" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
                   <MdCastle />
                   </a>
                   <a href="https://twitter.com/dragmakex" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>

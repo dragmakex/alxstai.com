@@ -29,7 +29,12 @@ export default function Blog(props: HomeProps) {
       username: "alex",
       message: "Happy π-day! That's all.",
       timestamp: new Date(2024, 2, 14, 15, 40, 34, 0),
-    }
+    },
+    {
+      username: "alex",
+      message: "Last weekend I went to the EthereumZuri.ch conference. It was a lot of fun and I got to meet some really ambitious and innovative people! I will definitely volunteer next year again. You can check out my post here: <a href='https://x.com/alxstai/status/1778838697238032669' target='_blank'>Click me!</a>",
+      timestamp: new Date(2024, 3, 15, 14, 0, 44, 0),
+    }      
   ]);
 
   const videoRef = useRef<HTMLVideoElement>(null);

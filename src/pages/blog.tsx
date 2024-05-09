@@ -34,7 +34,17 @@ export default function Blog(props: HomeProps) {
       username: "alex",
       message: "Last weekend I went to the EthereumZuri.ch conference. It was a lot of fun and I got to meet some really ambitious and innovative people! I will definitely volunteer next year again. You can check out my post here: <a href='https://x.com/alxstai/status/1778838697238032669' target='_blank'>Click me!</a>",
       timestamp: new Date(2024, 3, 15, 14, 0, 44, 0),
-    }      
+    },
+    {
+      username: "alex",
+      message: "Currently researching AI x Blockchain topics! Everything is very interesting and definitely worth a look. I did a deep-dive into Gensyn.ai, which is a L1 that helps with training models. I joined swissDAO recently and we are trying to build something that combines these two fascinating fields. Let's see where we end up :)",
+      timestamp: new Date(2024, 4, 9, 16, 37, 2, 0),
+    },
+    {
+      username: "alex",
+      message: "If you are a dev you need to get the dev.daily browser extension! It gives you new articles to check out whenever you open up a new tab and helps you learn. Great way to procrastinate :D",
+      timestamp: new Date(2024, 4, 9, 16, 41, 30, 0),
+    },
   ]);
 
   const videoRef = useRef<HTMLVideoElement>(null);

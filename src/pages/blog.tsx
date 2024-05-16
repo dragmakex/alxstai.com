@@ -45,6 +45,11 @@ export default function Blog(props: HomeProps) {
       message: "If you are a dev you need to get the dev.daily browser extension! It gives you new articles to check out whenever you open up a new tab and helps you learn. Great way to procrastinate :D",
       timestamp: new Date(2024, 4, 9, 16, 41, 30, 0),
     },
+    {
+      username: "alex",
+      message: "I'm currently at a Political Consulting conference in Berlin, because a friend asked me to join. He sent me to participate in the workshop of a company he found interesting and so I did. I almost died of boredom! It reminded me of all the stupid brainstorming sessions at school.",
+      timestamp: new Date(2024, 4, 16, 15, 53, 32, 0),
+    }
   ]);
 
   const videoRef = useRef<HTMLVideoElement>(null);

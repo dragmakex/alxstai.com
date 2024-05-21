@@ -49,6 +49,11 @@ export default function Blog(props: HomeProps) {
       username: "alex",
       message: "I'm currently at a Political Consulting conference in Berlin, because a friend asked me to join. He sent me to participate in the workshop of a company he found interesting and so I did. I almost died of boredom! It reminded me of all the stupid brainstorming sessions at school.",
       timestamp: new Date(2024, 4, 16, 15, 53, 32, 0),
+    },
+    {
+      username: "alex",
+      message: "Just read a paper called: \"SoK: Decentralized Finance (DeFi) - Fundamentals, Taxonomy and Risks\". It was recommended to me by Krzysztof Gogol and is a great way to start the DeFi journey. I learned a lot!",
+      timestamp: new Date(2024, 4, 21, 16, 55, 31, 0),
     }
   ]);
 

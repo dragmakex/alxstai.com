@@ -129,7 +129,7 @@ export default function Blog(props: HomeProps) {
               ))}
             </div>
 
-            <div className={`flex justify-center mt-4 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
+            <div className={`flex justify-center mt-4 p-4 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
                 <WebringBanner theme={darkMode ? 'solarized' : 'ugly'}></WebringBanner>
             </div>
             

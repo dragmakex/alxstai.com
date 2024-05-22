@@ -4,6 +4,8 @@ import { useVideoAndDarkMode } from '../utils/utils';
 import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
 import { MdCastle } from "react-icons/md";
 import sticky_luffy from "../../public/images/sticky_luffy.png";
+import swissdao_red from "../../public/images/swissdao_red.png";
+import swissdao_blue from "../../public/images/swissdao_blue.png";
 import Navbar from '../utils/navbar';
 import { useState, useEffect, useRef } from 'react';
 
@@ -98,6 +100,16 @@ export default function About(props: HomeProps) {
                   <a href="https://twitter.com/dragmakex" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
                   <AiFillTwitterCircle />
                   </a>
+                  {!darkMode && (
+                    <a href="https://www.swissdao.space/" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
+                    <Image src={swissdao_red} alt='swissDAO Logo' className='lg:w-14 lg:h-14 md:w-12 md:h-12 w-8 h-8'/>
+                    </a>
+                  )}
+                  {darkMode && (
+                    <a href="https://www.swissdao.space/" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
+                    <Image src={swissdao_blue} alt='swissDAO Logo' className='lg:w-14 lg:h-14 md:w-12 md:h-12 w-8 h-8'/>
+                    </a>
+                  )}
               </div>
             </div>
 

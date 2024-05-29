@@ -54,6 +54,11 @@ export default function Blog(props: HomeProps) {
       username: "alex",
       message: "Just read a paper called: \"SoK: Decentralized Finance (DeFi) - Fundamentals, Taxonomy and Risks\". It was recommended to me by Krzysztof Gogol and is a great way to start the DeFi journey. I learned a lot!",
       timestamp: new Date(2024, 4, 21, 16, 55, 31, 0),
+    },
+    {
+      username: "alex",
+      message: "Just spent the last couple days at Princeton, because a good friend that came to ETH for an exchange was graduating. There were so many differen ceremonies that I lost count at one point. She bought me a Princeton bright orange sweatshirt and I got a Princeton Parent mug lol. Would recommend!",
+      timestamp: new Date(2024, 4, 29, 16, 2, 22, 0),
     }
   ]);
 

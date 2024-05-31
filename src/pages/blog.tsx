@@ -61,16 +61,17 @@ export default function Blog(props: HomeProps) {
       timestamp: new Date(2024, 4, 29, 16, 2, 22, 0),
     }
   ]);
-
+  
   const videoRef = useRef<HTMLVideoElement>(null);
 
-    useEffect(() => {
-      if (videoRef.current) {
-        videoRef.current.play().catch(error => {
-          console.error("Video autoplay failed:", error);
-        });
-      }
-    }, []);
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Video autoplay failed:", error);
+        toggleVideo();
+      });
+    }
+  }, [toggleVideo]);
 
   // Set loaded to true after 1000 milliseconds (1 second)
   setTimeout(() => {
@@ -118,7 +119,7 @@ export default function Blog(props: HomeProps) {
           <Navbar videoOff={videoOff} darkMode={darkMode} toggleVideo={toggleVideo} toggleDarkMode={toggleDarkMode} />
             {!videoOff && (
             <div className="fixed top-0 left-0 w-full h-full z-[-10]">
-              <video src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>
+              <video ref={videoRef} src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>
             </div>
             )}
           <div>

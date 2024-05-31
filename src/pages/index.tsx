@@ -19,23 +19,24 @@ export default function Home(props: HomeProps) {
 
   const [hover, setHover] = useState(false);
 
-    const normalStyle = { display: 'inline' };
-    const hoverStyle = {
-        ...normalStyle,
-        background: 'linear-gradient(to right, #3498db, #8e44ad)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-    };
+  const normalStyle = { display: 'inline' };
+  const hoverStyle = {
+      ...normalStyle,
+      background: 'linear-gradient(to right, #3498db, #8e44ad)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+  };
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
-    useEffect(() => {
-      if (videoRef.current) {
-        videoRef.current.play().catch(error => {
-          console.error("Video autoplay failed:", error);
-        });
-      }
-    }, []);
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Video autoplay failed:", error);
+        toggleVideo();
+      });
+    }
+  }, [toggleVideo]);
 
   // Set loaded to true after 1000 milliseconds (1 second)
   setTimeout(() => {
@@ -83,9 +84,9 @@ export default function Home(props: HomeProps) {
           
           <Navbar videoOff={videoOff} darkMode={darkMode} toggleVideo={toggleVideo} toggleDarkMode={toggleDarkMode} />
             {!videoOff && (
-            <div className="fixed top-0 left-0 w-full h-full z-[-10]">
-              <video src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>
-            </div>
+              <div className="fixed top-0 left-0 w-full h-full z-[-10]">
+                <video ref={videoRef} src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>
+              </div>
             )}
 
           <div className={`text-5xl md:text-8xl 2xl:text-9xl text-center font-tisa_bold font-bold mt-10 py-40 2xl:py-60 dark:text-gray-400 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>hi, i'm <Link href="/about"><span className='transition-all duration-300' onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} style={hover ? hoverStyle : normalStyle}>alex</span></Link></div>

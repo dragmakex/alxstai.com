@@ -18,33 +18,34 @@ type HomeProps = {
 
 export default function About(props: HomeProps) {
   
-    const { videoOff, darkMode, toggleDarkMode, toggleVideo} = useVideoAndDarkMode();
+  const { videoOff, darkMode, toggleDarkMode, toggleVideo} = useVideoAndDarkMode();
 
-    const [loaded, setLoaded] = useState(false);
-    
-    const videoRef = useRef<HTMLVideoElement>(null);
-
-    useEffect(() => {
-      if (videoRef.current) {
-        videoRef.current.play().catch(error => {
-          console.error("Video autoplay failed:", error);
-        });
-      }
-    }, []);
-
-    // Set loaded to true after 1000 milliseconds (1 second)
-    setTimeout(() => {
-        setLoaded(true);
-    }, 1000);
+  const [loaded, setLoaded] = useState(false);
   
-    useEffect(() => {
-        console.log(darkMode)
-        document.body.className = darkMode ? 'bg-black' : 'bg-gray-300';
-    
-        return () => {
-          document.body.className = '';
-        };
-      }, [darkMode]);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Video autoplay failed:", error);
+        toggleVideo();
+      });
+    }
+  }, [toggleVideo]);
+
+  // Set loaded to true after 1000 milliseconds (1 second)
+  setTimeout(() => {
+      setLoaded(true);
+  }, 1000);
+
+  useEffect(() => {
+      console.log(darkMode)
+      document.body.className = darkMode ? 'bg-black' : 'bg-gray-300';
+  
+      return () => {
+        document.body.className = '';
+      };
+    }, [darkMode]);
 
   return (
     <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''}`}>      

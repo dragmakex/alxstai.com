@@ -57,7 +57,7 @@ export default function Blog(props: HomeProps) {
     },
     {
       username: "alex",
-      message: "Just spent the last couple days at Princeton, because a good friend that came to ETH for an exchange was graduating. There were so many differen ceremonies that I lost count at one point. She bought me a bright orange Princeton sweatshirt and I got a Princeton Parent mug lol. I've never seen such a huge graduation event. Truly the American experience. Would recommend!",
+      message: "Just spent the last couple days at Princeton, because a good friend that came to ETH for an exchange was graduating. There were so many different ceremonies that I lost count at one point. She bought me a bright orange Princeton sweatshirt and I got a Princeton Parent mug lol. I've never seen such a huge graduation event. Truly the American experience. Would recommend!",
       timestamp: new Date(2024, 4, 29, 16, 2, 22, 0),
     }
   ]);

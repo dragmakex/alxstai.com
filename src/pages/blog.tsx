@@ -48,7 +48,7 @@ export default function Blog(props: HomeProps) {
     {
       username: "alex",
       message: "I'm currently at a political consulting conference in Berlin, because a friend asked me to join. He sent me to participate in the workshop of a company he found interesting and so I did. I almost died of boredom! It reminded me of all the stupid brainstorming sessions at school.",
-      timestamp: new Date(2024, 4, 16, 15, 53, 32, 0),x
+      timestamp: new Date(2024, 4, 16, 15, 53, 32, 0),
     },
     {
       username: "alex",

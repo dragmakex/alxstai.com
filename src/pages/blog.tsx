@@ -48,7 +48,7 @@ export default function Blog(props: HomeProps) {
     {
       username: "alex",
       message: "I'm currently at a political consulting conference in Berlin, because a friend asked me to join. He sent me to participate in the workshop of a company he found interesting and so I did. I almost died of boredom! It reminded me of all the stupid brainstorming sessions at school.",
-      timestamp: new Date(2024, 4, 16, 15, 53, 32, 0),
+      timestamp: new Date(2024, 4, 16, 15, 53, 32, 0),x
     },
     {
       username: "alex",
@@ -57,9 +57,19 @@ export default function Blog(props: HomeProps) {
     },
     {
       username: "alex",
-      message: "Just spent the last couple days at Princeton, because a good friend that came to ETH for an exchange was graduating. There were so many different ceremonies that I lost count at one point. She bought me a bright orange Princeton sweatshirt and I got a Princeton Parent mug lol. I've never seen such a huge graduation event. Truly the American experience. Would recommend!",
+      message: "Just spent the last couple days at Princeton, because a good friend that came to ETH for an exchange was graduating. There were so many different ceremonies that I lost count at one point. I got a bright orange Princeton sweatshirt and a Princeton Parent mug lol. I've never seen such a huge graduation event. Truly the American experience. Would recommend!",
       timestamp: new Date(2024, 4, 29, 16, 2, 22, 0),
-    }
+    },
+    {
+      username: "alex",
+      message: "June was crazy. First I went to visit my friend at Princeton. Then I went to see my old U.S. friends in Mason and Cincinnati, which is always a lot of fun. A lot has changed in the Midwest, that's for sure. After Cinci we went on a road trip through South Dakota to live the outlaw life. We saw the Badlands, Mt. Rushmore and bison. Truly the cowboy experience! Once I got back from the U.S. I slept one night in Zurich and then went on to Italy with my friends from ETH. We drove to Florence, Nerano, back to Florence and then spent our last night in a cabin in the woods. I finally got to see the Florence cathedral, which had been on my bucket list since 2017 AP Euro. I also finally saw my brother Michelangelo's \"David\"! Michelangelo was called \"The Divine\", so I wonder who made him the dumbest ninja turtle. Anyways, June was crazy.",
+      timestamp: new Date(2024, 6, 5, 11, 37, 5, 0),
+    },
+    {
+      username: "alex",
+      message: "I started working for a blockchain startup called SWIC Digital. So far I love the vibes and it's a loooot of fun. I can't wait to get more projects out!",
+      timestamp: new Date(2024, 6, 5, 11, 50, 4, 0),
+    },
   ]);
   
   const videoRef = useRef<HTMLVideoElement>(null);

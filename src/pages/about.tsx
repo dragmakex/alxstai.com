@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useVideoAndDarkMode } from '../utils/utils';
-import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import { FaXTwitter } from "react-icons/fa6";
 import { MdCastle } from "react-icons/md";
 import sticky_luffy from "../../public/images/sticky_luffy.png";
 import swissdao_red from "../../public/images/swissdao_red.png";
@@ -83,7 +84,7 @@ export default function About(props: HomeProps) {
               <video ref={videoRef} src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>
             </div>
             )}
-            <div className='2xl:py-6'>
+            <div className='2xl:py-40 xl:py-20'>
               <div className={`inset-0 border-4 border-gray-600 dark:border-white flex items-center relative mx-auto rounded-full w-60 h-60 md:w-96 md:h-96 2xl:h-120 2xl:w-120 mt-10 mb-10 overflow-hidden dark:bg-gray-400 bg-black transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
                   <Image src={sticky_luffy} fill objectFit="cover" alt={'Picture'} className='border-lg border-white'/>
               </div>
@@ -99,7 +100,7 @@ export default function About(props: HomeProps) {
                   <MdCastle />
                   </a>
                   <a href="https://twitter.com/alxstai" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
-                  <AiFillTwitterCircle />
+                  <FaXTwitter />
                   </a>
                   {!darkMode && (
                     <a href="https://www.swissdao.space/" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>

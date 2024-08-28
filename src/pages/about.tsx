@@ -51,21 +51,21 @@ export default function About(props: HomeProps) {
   return (
     <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''}`}>      
       <Head>
-        <title> about alx </title>
+        <title>◦ about ◦</title>
 
-        <meta name="apple-mobile-web-app-title" content="about alx"></meta>
-        <meta name="application-name" content="about alx"></meta>
-        <meta name="description" content="About me page of my personal website including social media links."></meta>
+        <meta name="apple-mobile-web-app-title" content="about 🐉"></meta>
+        <meta name="application-name" content="about 🐉"></meta>
+        <meta name="description" content="About 🐉"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <meta charSet="UTF-8"></meta>
         <meta property="og:title" content="about alx"></meta>
-        <meta property="og:description" content="About me page of my personal website including social media links."></meta>
+        <meta property="og:description" content="About 🐉"></meta>
         <meta property="og:image" content="https://alxstai.com/about"></meta>
         <meta property="og:url" content="https://alxstai.com/about"></meta>
         <meta property="og:type" content="website"></meta>
         <meta name="twitter:card" content="summary_large_image"></meta>
         <meta name="twitter:title" content="about alx"></meta>
-        <meta name="twitter:description" content="About me page of my personal website including social media links."></meta>
+        <meta name="twitter:description" content="About 🐉"></meta>
         <meta name="twitter:image" content="https://alxstai.com/about"></meta>
         <meta name="robots" content="index, follow"></meta>
 
@@ -93,7 +93,7 @@ export default function About(props: HomeProps) {
                   <a href="https://github.com/dragmakex" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
                   <AiFillGithub />
                   </a>
-                  {/*<a href="https://linkedin.com/in/alxstai" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
+                  {/*<a href="https://linkedin.com/in/" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
                   <AiFillLinkedin />
                   </a>*/}
                   <a href="https://warpcast.com/alxstai" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>

@@ -55,21 +55,21 @@ export default function Home(props: HomeProps) {
   return (
     <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''} `}>      
       <Head>
-        <title> alxstai </title>
+        <title>◦ alxstai ◦</title>
 
-        <meta name="apple-mobile-web-app-title" content="alxstai"></meta>
-        <meta name="application-name" content="alxstai"></meta>
-        <meta name="description" content="Starting page of my personal website."></meta>
+        <meta name="apple-mobile-web-app-title" content="alxstai 🐉"></meta>
+        <meta name="application-name" content="alxstai 🐉"></meta>
+        <meta name="description" content="I hereby invite you to click here 🐉"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <meta charSet="UTF-8"></meta>
-        <meta property="og:title" content="alxstai"></meta>
-        <meta property="og:description" content="Starting page of my personal website."></meta>
+        <meta property="og:title" content="alxstai 🐉"></meta>
+        <meta property="og:description" content="I hereby invite you to click here 🐉"></meta>
         <meta property="og:image" content="https://alxstai.com"></meta>
         <meta property="og:url" content="https://alxstai.com"></meta>
         <meta property="og:type" content="website"></meta>
         <meta name="twitter:card" content="summary_large_image"></meta>
-        <meta name="twitter:title" content="alxstai"></meta>
-        <meta name="twitter:description" content="Starting page of my personal website."></meta>
+        <meta name="twitter:title" content="alxstai 🐉"></meta>
+        <meta name="twitter:description" content="I hereby invite you to click here 🐉"></meta>
         <meta name="twitter:image" content="https://alxstai.com"></meta>
         <meta name="robots" content="index, follow"></meta>
 

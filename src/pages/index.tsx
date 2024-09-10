@@ -22,7 +22,7 @@ export default function Home(props: HomeProps) {
   const normalStyle = { display: 'inline' };
   const hoverStyle = {
       ...normalStyle,
-      background: 'linear-gradient(to right, #3498db, #8e44ad)',
+      background: 'linear-gradient(to right, #60a5fa, #ffffff, #facc15)',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
   };
@@ -38,7 +38,6 @@ export default function Home(props: HomeProps) {
     }
   }, [toggleVideo]);
 
-  // Set loaded to true after 1000 milliseconds (1 second)
   setTimeout(() => {
       setLoaded(true);
   }, 1000);

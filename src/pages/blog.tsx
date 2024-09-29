@@ -67,7 +67,7 @@ export default function Blog(props: HomeProps) {
     },
     {
       username: "alex",
-      message: "I started working for a blockchain startup called SWIC Digital. So far I love the vibes and it's a loooot of fun. I can't wait to get more projects out!",
+      message: "I started working for a blockchain startup focused on tokenization. So far I love the vibes and it's a loooot of fun. I can't wait to get more projects out!",
       timestamp: new Date(2024, 6, 5, 11, 50, 4, 0),
     },
   ]);

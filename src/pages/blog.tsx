@@ -72,7 +72,7 @@ export default function Blog(props: HomeProps) {
     },
     {
       username: "alex",
-      message: "Lots of stuff happened. Since July I've been working on 3 projects at the same time while also trying to develop some side projects and learn new things. It has been quite exhausting, but definitely worthwhile. Looking back to when I got my bachelor's in February vs. now is such a big change that I can't even believe it myself. If I continue like this at the same pace I wonder where life will take me. To sum up the past few months: I moved to Paris for an exchange and I started using nvim. More updates soon and shoutout to Akari if he still reads my blog (I'm not in danger, will let you know if that changes)."
+      message: "Lots of stuff happened. Since July I've been working on 3 projects at the same time while also trying to develop some side projects and learn new things. It has been quite exhausting, but definitely worthwhile. Looking back to when I got my bachelor's in February vs. now is such a big change that I can't even believe it myself. If I continue like this at the same pace I wonder where life will take me. To sum up the past few months: I moved to Paris for an exchange and I started using nvim. More updates soon and shoutout to Akari if he still reads my blog (I'm not in danger, will let you know if that changes).",
       timestamp: new Date(2024, 10, 8, 20, 48, 35, 0),
     },
   ]);

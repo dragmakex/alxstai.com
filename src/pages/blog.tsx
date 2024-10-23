@@ -79,7 +79,7 @@ export default function Blog(props: HomeProps) {
       username: "alex",
       message: "I love Poland! Warsaw was a very fun trip :)",
       timestamp: new Date(2024, 9, 23, 10, 08, 03, 0),
-    },
+    }
   ]);
   
   const videoRef = useRef<HTMLVideoElement>(null);

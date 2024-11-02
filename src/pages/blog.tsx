@@ -119,17 +119,17 @@ export default function Blog(props: HomeProps) {
 
         <meta name="apple-mobile-web-app-title" content="blog 🐉"></meta>
         <meta name="application-name" content="blog 🐉"></meta>
-        <meta name="description" content="Blog 🐉"></meta>
+        <meta name="description" content="blog 🐉"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <meta charSet="UTF-8"></meta>
         <meta property="og:title" content="blog 🐉"></meta>
-        <meta property="og:description" content="Blog 🐉"></meta>
+        <meta property="og:description" content="blog 🐉"></meta>
         <meta property="og:image" content="https://alxstai.com/blog"></meta>
         <meta property="og:url" content="https://alxstai.com/blog"></meta>
         <meta property="og:type" content="website"></meta>
         <meta name="twitter:card" content="summary_large_image"></meta>
         <meta name="twitter:title" content="blog 🐉"></meta>
-        <meta name="twitter:description" content="Blog 🐉"></meta>
+        <meta name="twitter:description" content="blog 🐉"></meta>
         <meta name="twitter:image" content="https://alxstai.com/blog"></meta>
         <meta name="robots" content="index, follow"></meta>
 

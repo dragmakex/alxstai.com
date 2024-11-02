@@ -55,17 +55,17 @@ export default function About(props: HomeProps) {
 
         <meta name="apple-mobile-web-app-title" content="about 🐉"></meta>
         <meta name="application-name" content="about 🐉"></meta>
-        <meta name="description" content="About 🐉"></meta>
+        <meta name="description" content="about 🐉"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <meta charSet="UTF-8"></meta>
         <meta property="og:title" content="about alx"></meta>
-        <meta property="og:description" content="About 🐉"></meta>
+        <meta property="og:description" content="about 🐉"></meta>
         <meta property="og:image" content="https://alxstai.com/about"></meta>
         <meta property="og:url" content="https://alxstai.com/about"></meta>
         <meta property="og:type" content="website"></meta>
         <meta name="twitter:card" content="summary_large_image"></meta>
         <meta name="twitter:title" content="about alx"></meta>
-        <meta name="twitter:description" content="About 🐉"></meta>
+        <meta name="twitter:description" content="about 🐉"></meta>
         <meta name="twitter:image" content="https://alxstai.com/about"></meta>
         <meta name="robots" content="index, follow"></meta>
 
@@ -85,7 +85,7 @@ export default function About(props: HomeProps) {
             </div>
             )}
             <div className='2xl:py-40 xl:py-10'>
-              <div className={`inset-0 border-4 border-gray-600 dark:border-white flex items-center relative mx-auto rounded-full w-60 h-60 md:w-96 md:h-96 2xl:h-120 2xl:w-120 mt-10 mb-10 overflow-hidden dark:bg-gray-400 bg-black transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
+              <div className={`inset-0 border-4 border-gray-600 dark:border-white flex items-center relative mx-auto rounded-full w-60 h-60 md:w-80 md:h-80 2xl:h-120 2xl:w-120 mt-6 mb-6 2xl:mt-12 2xl:mb-12 overflow-hidden dark:bg-gray-400 bg-black transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
                   <Image src={sticky_luffy} fill objectFit="cover" alt={'Picture'} className='border-lg border-white'/>
               </div>
           

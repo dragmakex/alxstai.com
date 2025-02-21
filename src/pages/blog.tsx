@@ -79,6 +79,11 @@ export default function Blog(props: HomeProps) {
       username: "alex",
       message: "I love Poland! Warsaw was a very fun trip :)",
       timestamp: new Date(2024, 9, 23, 10, 8, 3, 0),
+    },
+    {
+      username: "alex",
+      message: "I haven't been very active on here, because I switched to Farcaster and X (you can find my links in my about page). I have been posting and interacting with friends on these platforms for the past months and I must say it has been amazing! I have learned a lot and met some very cool people. I have also been traveling and building in silence. SWIC is going very well and I have also started focusing more on small Farcaster side projects. I went to the DEGEN anniversary event in Wroclaw and to NFT Paris - two very awesome events! I fell in love with AlienQueen's art and the DEGEN party was also very fun :) If you would like to see more updates please follow me on Farcaster and X!",
+      timestamp: new Date(2025, 1, 21, 12, 40, 35, 0),
     }
   ]);
   

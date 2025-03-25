@@ -84,12 +84,12 @@ export default function About(props: HomeProps) {
               <video ref={videoRef} src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>
             </div>
             )}
-            <div className='2xl:py-40 xl:py-10'>
-              <div className={`inset-0 border-4 border-gray-600 dark:border-white flex items-center relative mx-auto rounded-full w-60 h-60 md:w-80 md:h-80 2xl:h-120 2xl:w-120 mt-6 mb-6 2xl:mt-12 2xl:mb-12 overflow-hidden dark:bg-gray-400 bg-black transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
+            <div className='py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-32'>
+              <div className={`inset-0 border-4 border-gray-600 dark:border-white flex items-center relative mx-auto rounded-full w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 mt-4 mb-4 overflow-hidden dark:bg-gray-400 bg-black transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
                   <Image src={sticky_luffy} fill objectFit="cover" alt={'Picture'} className='border-lg border-white'/>
               </div>
           
-              <div className={`text-4xl md:text-5xl lg:text-6xl flex justify-center gap-8 md:gap-16 lg:gap-24 py-4 mb-2 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
+              <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl flex justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 py-4 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
                   <a href="https://github.com/dragmakex" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
                   <AiFillGithub />
                   </a>
@@ -104,12 +104,12 @@ export default function About(props: HomeProps) {
                   </a>
                   {!darkMode && (
                     <a href="https://www.swissdao.space/" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
-                    <Image src={swissdao_red} alt='swissDAO Logo' className='lg:w-14 lg:h-14 md:w-12 md:h-12 w-8 h-8'/>
+                    <Image src={swissdao_red} alt='swissDAO Logo' className='w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 xl:w-12 xl:h-12'/>
                     </a>
                   )}
                   {darkMode && (
                     <a href="https://www.swissdao.space/" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
-                    <Image src={swissdao_blue} alt='swissDAO Logo' className='lg:w-14 lg:h-14 md:w-12 md:h-12 w-8 h-8'/>
+                    <Image src={swissdao_blue} alt='swissDAO Logo' className='w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 xl:w-12 xl:h-12'/>
                     </a>
                   )}
               </div>

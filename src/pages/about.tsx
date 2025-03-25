@@ -84,12 +84,12 @@ export default function About(props: HomeProps) {
               <video ref={videoRef} src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>
             </div>
             )}
-            <div className='py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-32'>
-              <div className={`inset-0 border-4 border-gray-600 dark:border-white flex items-center relative mx-auto rounded-full w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 mt-4 mb-4 overflow-hidden dark:bg-gray-400 bg-black transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
+            <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center'>
+              <div className={`inset-0 border-4 border-gray-600 dark:border-white flex items-center relative mx-auto rounded-full w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 overflow-hidden dark:bg-gray-400 bg-black transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
                   <Image src={sticky_luffy} fill objectFit="cover" alt={'Picture'} className='border-lg border-white'/>
               </div>
           
-              <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl flex justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 py-4 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
+              <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl flex justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 mt-8 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
                   <a href="https://github.com/dragmakex" target='_blank' className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'>
                   <AiFillGithub />
                   </a>

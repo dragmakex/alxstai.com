@@ -77,7 +77,7 @@ export default function Home(props: HomeProps) {
               </div>
             )}
 
-          <div className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-8xl text-center font-tisa_bold font-bold mt-16 py-20 sm:py-24 md:py-32 lg:py-40 xl:py-48 2xl:py-64 dark:text-gray-400 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
+          <div className={`text-6xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-8xl text-center font-tisa_bold font-bold mt-16 py-16 sm:py-24 md:py-32 lg:py-40 xl:py-48 2xl:py-64 dark:text-gray-400 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
             hi, i'm <Link href="/about">
               <span className={`hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-blue-400 via-white to-yellow-300 hover:transition-all hover:duration-500`}>
                 alex

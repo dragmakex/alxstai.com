@@ -1,92 +1,60 @@
-import Head from 'next/head';
-import { useVideoAndDarkMode } from '../utils/utils';
-import Navbar from '../utils/navbar';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import StickyPageHead from '../components/StickyPageHead';
+import StickyLayout from '../components/StickyLayout';
+import { useVideoAndDarkMode } from '../hooks/useVideoAndDarkMode';
 
-type HomeProps = {
-  videoOff: boolean;
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-  toggleVideo: () => void;
-}
-
-export default function Home(props: HomeProps) {
-  
-  const { videoOff, darkMode, toggleDarkMode, toggleVideo} = useVideoAndDarkMode();
-
+export default function Home() {
+  const { videoOff, darkMode, toggleDarkMode, toggleVideo } = useVideoAndDarkMode();
   const [loaded, setLoaded] = useState(false);
 
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.error("Video autoplay failed:", error);
-        toggleVideo();
-      });
-    }
-  }, [toggleVideo]);
-
-  setTimeout(() => {
+    const timer = setTimeout(() => {
       setLoaded(true);
-  }, 1000);
-
-  useEffect(() => {
-    document.body.className = darkMode ? 'bg-black' : 'bg-gray-300';
-
-    return () => {
-      document.body.className = '';
-    };
-  }, [darkMode]);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''} `}>      
-      <Head>
-        <title>◦ alxstai ◦</title>
-
-        <meta name="apple-mobile-web-app-title" content="alxstai 🐉"></meta>
-        <meta name="application-name" content="alxstai 🐉"></meta>
-        <meta name="description" content="I hereby invite you to click here 🐉"></meta>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-        <meta charSet="UTF-8"></meta>
-        <meta property="og:title" content="alxstai 🐉"></meta>
-        <meta property="og:description" content="I hereby invite you to click here 🐉"></meta>
-        <meta property="og:image" content="https://alxstai.com"></meta>
-        <meta property="og:url" content="https://alxstai.com"></meta>
-        <meta property="og:type" content="website"></meta>
-        <meta name="twitter:card" content="summary_large_image"></meta>
-        <meta name="twitter:title" content="alxstai 🐉"></meta>
-        <meta name="twitter:description" content="I hereby invite you to click here 🐉"></meta>
-        <meta name="twitter:image" content="https://alxstai.com"></meta>
-        <meta name="robots" content="index, follow"></meta>
-
-        <link rel="icon" href="/images/favicon.ico"/>
-        <link rel="shortcut icon" href="/images/favicon.ico"/>
-
-      </Head>        
-
-      <main className={`px-10 md:px-20 lg:px-40 dark:bg-black ${videoOff && !darkMode ? 'bg-gray-300' : '' }`}>
-
-        <section className="min-h-screen"> 
-          
-          <Navbar videoOff={videoOff} darkMode={darkMode} toggleVideo={toggleVideo} toggleDarkMode={toggleDarkMode} />
-            {!videoOff && (
-              <div className="fixed top-0 left-0 w-full h-full z-[-10]">
-                <video ref={videoRef} src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>
-              </div>
-            )}
-
-          <div className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-8xl text-center whitespace-nowrap font-tisa_bold font-bold absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 dark:text-gray-400 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
+    <>
+      <StickyPageHead
+        title="alxstai"
+        description="I hereby invite you to click here 🐉"
+        ogUrl="https://alxstai.com"
+        canonicalUrl="https://alxstai.com"
+        keywords="alex, alxstai, portfolio, software engineer, web3 developer, blockchain, eth zurich, sticky"
+      />
+      <StickyLayout
+        videoOff={videoOff}
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+        toggleVideo={toggleVideo}
+        showVideo={true}
+        loaded={loaded}
+      >
+        <motion.div
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-8xl text-center whitespace-nowrap font-tisa_bold font-bold absolute top-1/2 left-1/2 dark:text-gray-400"
+            initial={{ opacity: 0, x: "-50%", y: "-50%", translateY: -25 }}
+            animate={{
+              opacity: loaded ? 1 : 0,
+              x: "-50%",
+              y: loaded ? "-50%" : "-50%",
+              translateY: loaded ? [0, -15, 3, -15, 0] : -20
+            }}
+            transition={{
+              opacity: { duration: 0.7 },
+              translateY: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+            }}
+          >
             hi, i'm <Link href="/about">
-              <span className={`hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-blue-400 via-white to-yellow-300 hover:transition-all hover:duration-500`}>
-                alex
-              </span>
+              <span className="hover:text-transparent hover:bg-clip-text active:text-transparent active:bg-clip-text hover:bg-gradient-to-r active:bg-gradient-to-r hover:from-purple-300 hover:via-pink-300 hover:to-indigo-400 active:from-purple-300 active:via-pink-300 active:to-indigo-400 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-indigo-500 dark:active:from-purple-400 dark:active:via-pink-400 dark:active:to-indigo-500 transition-all duration-500">
+              alex
+            </span>
 
             </Link>
-          </div>        
-        </section>
-      </main>
-    </div>
+        </motion.div>
+      </StickyLayout>
+    </>
   )
 }

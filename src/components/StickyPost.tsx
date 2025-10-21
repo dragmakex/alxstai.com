@@ -1,15 +1,20 @@
-import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-function Post(props: { username: any; message: any; timestamp: any; }) {
+interface StickyPostProps {
+  username: string;
+  message: string;
+  timestamp: Date;
+}
 
-    const { username, message, timestamp } = props;
+function StickyPost({ username, message, timestamp }: StickyPostProps) {
     const [loaded, setLoaded] = useState(false);
 
-    // Set loaded to true after 1000 milliseconds (1 second)
-    setTimeout(() => {
-        setLoaded(true);
-    }, 1000);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoaded(true);
+        }, 1000);
+        return () => clearTimeout(timer);
+    }, []);
 
   return (
     <div className={`bg-white border border-black dark:bg-gray-400 dark:border-white rounded shadow-sm p-4 my-5 mx-5 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
@@ -20,4 +25,4 @@ function Post(props: { username: any; message: any; timestamp: any; }) {
   );
 }
 
-export default Post;
+export default StickyPost;

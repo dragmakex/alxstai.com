@@ -13,13 +13,8 @@ export const useVideoAndDarkMode = () => {
   }
 
   const toggleVideo = () => {
-    if (videoOff) {
-      setVideo(!videoOff)
-      setDarkMode(false)
-    } else {
-      setVideo(!videoOff)
-      setDarkMode(true)
-    }
+    setVideo(!videoOff);
+    setDarkMode(videoOff ? false : true);
   }
 
   return {

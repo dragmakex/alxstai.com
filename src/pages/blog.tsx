@@ -1,25 +1,21 @@
-import Head from 'next/head';
-import { useVideoAndDarkMode } from '../utils/utils';
-import Navbar from '../utils/navbar';
-import { useState, useEffect, useRef } from 'react';
-import React from 'react';
-import Post from '../utils/post';
-import WebringBanner from '@/utils/webring';
+import { useState, useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import StickyPost from '../components/StickyPost';
+import StickyWebringBanner from '../components/StickyWebring';
+import StickyPageHead from '../components/StickyPageHead';
+import StickyLayout from '../components/StickyLayout';
+import { useVideoAndDarkMode } from '../hooks/useVideoAndDarkMode';
 
-type HomeProps = {
-  videoOff: boolean;
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-  toggleVideo: () => void;
-}
-
-export default function Blog(props: HomeProps) {
-  
-  const { videoOff, darkMode, toggleDarkMode, toggleVideo} = useVideoAndDarkMode();
-
+export default function Blog() {
+  const { videoOff, darkMode, toggleDarkMode, toggleVideo } = useVideoAndDarkMode();
   const [loaded, setLoaded] = useState(false);
+  const { scrollY } = useScroll();
 
-  const [posts, setPosts] = useState([
+  const blur = useTransform(scrollY, [0, 100], [0, 6]);
+  const scale = useTransform(scrollY, [0, 100], [1, 0.98]);
+  const opacity = useTransform(scrollY, [0, 100], [1, 0.9]);
+
+  const [posts] = useState([
     {
       username: "alex",
       message: "Hello world! You can expect tweet-like posts coming soon :)",
@@ -85,95 +81,56 @@ export default function Blog(props: HomeProps) {
       message: "I haven't been very active on here, because I switched to Farcaster and X (you can find my links in my about page). I have been posting and interacting with friends on these platforms for the past months and I must say it has been amazing! I have learned a lot and met some very cool people. I have also been traveling and building in silence. SWIC is going very well and I have also started focusing more on small Farcaster side projects. I went to the DEGEN anniversary event in Wroclaw and to NFT Paris - two very awesome events! I fell in love with AlienQueen's art and the DEGEN party was also very fun :) If you would like to see more updates please follow me on Farcaster and X!",
       timestamp: new Date(2025, 1, 21, 12, 40, 35, 0),
     }
-  ]);
-  
-  const videoRef = useRef<HTMLVideoElement>(null);
+  ].sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()));
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.error("Video autoplay failed:", error);
-        toggleVideo();
-      });
-    }
-  }, [toggleVideo]);
-
-  // Set loaded to true after 1000 milliseconds (1 second)
-  setTimeout(() => {
+    const timer = setTimeout(() => {
       setLoaded(true);
-  }, 1000);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
-  useEffect(() => {
-      console.log(darkMode)
-      document.body.className = darkMode ? 'bg-black' : 'bg-gray-300';
   
-      return () => {
-        document.body.className = '';
-      };
-    }, [darkMode]);
-
-    useEffect(() => {
-      const sortedPosts = [...posts].sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
-      setPosts(sortedPosts);
-    }, []);
-
   return (
-    <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''}`}>      
-      <Head>
-        <title>◦ blog ◦</title>
+    <>
+      <StickyPageHead
+        title="blog"
+        description="alex's personal blog - thoughts on web3, blockchain, software development, and life"
+        ogUrl="https://alxstai.com/blog"
+        canonicalUrl="https://alxstai.com/blog"
+        keywords="blog, alex, alxstai, web3, blockchain, software development, thoughts, personal"
+      />
+      <StickyLayout
+        videoOff={videoOff}
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+        toggleVideo={toggleVideo}
+        showVideo={true}
+        loaded={loaded}
+      >
+            <motion.div
+              style={{
+                filter: blur,
+                scale: scale,
+                opacity: opacity
+              }}
+            >
+              <div className="mt-10 mb-20">
+                {posts.map((post, index) => (
+                  <StickyPost
+                    key={index}
+                    username={post.username}
+                    message={post.message}
+                    timestamp={post.timestamp}
+                  />
+                ))}
+              </div>
 
-        <meta name="apple-mobile-web-app-title" content="blog 🐉"></meta>
-        <meta name="application-name" content="blog 🐉"></meta>
-        <meta name="description" content="blog 🐉"></meta>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-        <meta charSet="UTF-8"></meta>
-        <meta property="og:title" content="blog 🐉"></meta>
-        <meta property="og:description" content="blog 🐉"></meta>
-        <meta property="og:image" content="https://alxstai.com/blog"></meta>
-        <meta property="og:url" content="https://alxstai.com/blog"></meta>
-        <meta property="og:type" content="website"></meta>
-        <meta name="twitter:card" content="summary_large_image"></meta>
-        <meta name="twitter:title" content="blog 🐉"></meta>
-        <meta name="twitter:description" content="blog 🐉"></meta>
-        <meta name="twitter:image" content="https://alxstai.com/blog"></meta>
-        <meta name="robots" content="index, follow"></meta>
-
-        <link rel="icon" href="/images/favicon.ico"/>
-        <link rel="shortcut icon" href="/images/favicon.ico"/>
-
-      </Head>        
-
-      <main className={`px-10 md:px-20 lg:px-40 dark:bg-black ${videoOff && !darkMode ? 'bg-gray-300' : '' }`}>
-
-        <section className="min-h-screen"> 
-          <Navbar videoOff={videoOff} darkMode={darkMode} toggleVideo={toggleVideo} toggleDarkMode={toggleDarkMode} />
-            {!videoOff && (
-            <div className="fixed top-0 left-0 w-full h-full z-[-10]">
-              <video ref={videoRef} src='op_bg.mp4' autoPlay loop muted playsInline className="w-full h-full object-cover object-center"></video>
-            </div>
-            )}
-          <div>
-            
-            <div className="mt-10">
-              {posts.map((post, index) => (
-                <Post
-                  key={index}
-                  username={post.username}
-                  message={post.message}
-                  timestamp={post.timestamp}
-                />
-              ))}
-            </div>
-
-            <div className={`flex justify-center mt-4 p-4 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-10' : 'opacity-0 translate-y-0'}`}>
-                <WebringBanner theme={darkMode ? 'solarized' : 'ugly'}></WebringBanner>
-            </div>
-            
-          </div>
-
-          
-        </section>
-      </main>
-    </div>
+              <div className={`flex justify-center mt-4 p-4 mb-20`}>
+                <StickyWebringBanner theme={darkMode ? 'solarized' : 'ugly'}></StickyWebringBanner>
+              </div>
+            </motion.div>
+      </StickyLayout>
+    </>
   )
 }

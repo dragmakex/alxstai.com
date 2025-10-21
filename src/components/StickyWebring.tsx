@@ -1,7 +1,6 @@
-import React from 'react';
 import Script from 'next/script';
 
-const WebringBanner = ({ theme = 'default' }) => {
+const StickyWebringBanner = ({ theme = 'default' }) => {
   return (
     <>
       <div>
@@ -14,4 +13,4 @@ const WebringBanner = ({ theme = 'default' }) => {
   );
 };
 
-export default WebringBanner;
+export default StickyWebringBanner;

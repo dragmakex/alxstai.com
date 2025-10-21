@@ -1,8 +1,8 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { useState } from 'react';
 
 interface StickyImageProps {
-  src: string;
+  src: string | StaticImageData;
   alt: string;
   width?: number;
   height?: number;

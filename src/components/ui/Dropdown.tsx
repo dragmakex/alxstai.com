@@ -23,7 +23,7 @@ function Dropdown() {
                                 <Link
                                     href={item.path}
                                     key={i}
-                                    className="font-tisa items-center flex justify-center px-2 py-1 hover:bg-gradient-to-r from-purple-300 via-pink-300 to-indigo-400 dark:from-purple-400 dark:via-pink-400 dark:to-indigo-500 cursor-pointer rounded-r-md border-l-transparent hover:border-l-black hover:dark:border-l-gray-400 border-l-4 active:text-white duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black"
+                                    className="font-tisa items-center flex justify-center px-2 py-1 hover:bg-gradient-to-r active:bg-gradient-to-r from-purple-300 via-pink-300 to-indigo-400 active:from-purple-300 active:via-pink-300 active:to-indigo-400 dark:from-purple-400 dark:via-pink-400 dark:to-indigo-500 dark:active:from-purple-400 dark:active:via-pink-400 dark:active:to-indigo-500 cursor-pointer rounded-r-md border-l-transparent hover:border-l-black hover:dark:border-l-gray-400 border-l-4 active:text-white duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black"
                                 >
                                     <h3>{item.tab}</h3>
                                 </Link>

@@ -58,7 +58,7 @@ export default function Home() {
         loaded={loaded}
       >
         <motion.div
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-8xl text-center font-tisa_bold font-bold absolute top-1/2 left-1/2 dark:text-gray-400"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-8xl text-center whitespace-nowrap font-tisa_bold font-bold absolute top-1/2 left-1/2 dark:text-gray-400"
           initial={{ opacity: 0, x: "-50%", y: "-50%", translateY: -25 }}
           animate={{
             opacity: loaded ? 1 : 0,

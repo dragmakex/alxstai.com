@@ -7,6 +7,7 @@ interface StickyVideoProps {
   muted?: boolean;
   playsInline?: boolean;
   className?: string;
+  poster?: string;
 }
 
 export default function StickyVideo({
@@ -15,7 +16,8 @@ export default function StickyVideo({
   loop = true,
   muted = true,
   playsInline = true,
-  className = ""
+  className = "",
+  poster
 }: StickyVideoProps) {
   const [isInView, setIsInView] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -41,10 +43,7 @@ export default function StickyVideo({
 
   useEffect(() => {
     if (isInView && videoRef.current) {
-      videoRef.current.addEventListener('loadeddata', () => {
-        setIsLoaded(true);
-        videoRef.current?.play().catch(() => {});
-      });
+      videoRef.current.play().catch(() => {});
     }
   }, [isInView]);
 
@@ -56,7 +55,9 @@ export default function StickyVideo({
       loop={loop}
       muted={muted}
       playsInline={playsInline}
-      preload="metadata"
+      preload={isInView ? "metadata" : "none"}
+      poster={poster}
+      onLoadedData={() => setIsLoaded(true)}
       className={`transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${className}`}
     />
   );

@@ -28,7 +28,7 @@ export default function Blog() {
     },
     {
       username: "alex",
-      message: "Last weekend I went to the EthereumZuri.ch conference. It was a lot of fun and I got to meet some really ambitious and innovative people! I will definitely volunteer next year again. You can check out my post here: <a href='https://x.com/alxstai/status/1778838697238032669' target='_blank'>Click me!</a>",
+      message: "Last weekend I went to the EthereumZuri.ch conference. It was a lot of fun and I got to meet some really ambitious and innovative people! I will definitely volunteer next year again. You can check out my post here: <a href='https://x.com/alxstai/status/1778838697238032669' target='_blank' rel='noopener noreferrer'>Click me!</a>",
       timestamp: new Date(2024, 3, 15, 14, 0, 44, 0),
     },
     {
@@ -83,6 +83,31 @@ export default function Blog() {
     }
   ].sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()));
 
+  const blogStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Alex's Blog",
+    url: "https://alxstai.com/blog",
+    description: "Updates on AI x blockchain, web3 building, and personal progress logs.",
+    author: {
+      "@type": "Person",
+      name: "Alex",
+      url: "https://alxstai.com/about"
+    }
+  };
+
+  const blogPostingStructuredData = posts.slice(0, 10).map((post) => ({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.message.replace(/<[^>]+>/g, '').slice(0, 110),
+    datePublished: post.timestamp.toISOString(),
+    author: {
+      "@type": "Person",
+      name: post.username
+    },
+    mainEntityOfPage: "https://alxstai.com/blog"
+  }));
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoaded(true);
@@ -95,10 +120,11 @@ export default function Blog() {
     <>
       <StickyPageHead
         title="blog"
-        description="alex's personal blog - thoughts on web3, blockchain, software development, and life"
+        description="Alex's AI x blockchain devlog — web3 experiments, product updates, conference notes, and builder life."
         ogUrl="https://alxstai.com/blog"
         canonicalUrl="https://alxstai.com/blog"
-        keywords="blog, alex, alxstai, web3, blockchain, software development, thoughts, personal"
+        keywords="alex blog, AI blockchain, web3 devlog, ethereum, farcaster, startup updates"
+        structuredData={[blogStructuredData, ...blogPostingStructuredData]}
       />
       <StickyLayout
         videoOff={videoOff}

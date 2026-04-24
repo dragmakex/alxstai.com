@@ -9,6 +9,7 @@ interface StickyImageProps {
   fill?: boolean;
   className?: string;
   priority?: boolean;
+  sizes?: string;
 }
 
 export default function StickyImage({
@@ -18,7 +19,8 @@ export default function StickyImage({
   height = 600,
   fill = false,
   className = "",
-  priority = false
+  priority = false,
+  sizes
 }: StickyImageProps) {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -29,8 +31,9 @@ export default function StickyImage({
         alt={alt}
         fill
         priority={priority}
+        sizes={sizes}
         className={`transition-opacity duration-300 object-cover ${isLoading ? 'opacity-0' : 'opacity-100'} ${className}`}
-        onLoadingComplete={() => setIsLoading(false)}
+        onLoad={() => setIsLoading(false)}
       />
     );
   }
@@ -44,7 +47,7 @@ export default function StickyImage({
         height={height}
         priority={priority}
         className={`transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
-        onLoadingComplete={() => setIsLoading(false)}
+        onLoad={() => setIsLoading(false)}
       />
     </div>
   );

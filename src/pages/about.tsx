@@ -1,15 +1,32 @@
-import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import { AiFillGithub } from 'react-icons/ai';
 import { FaXTwitter } from "react-icons/fa6";
 import { MdCastle } from "react-icons/md";
+
+const GithubIcon = AiFillGithub as unknown as React.ComponentType<{ className?: string }>;
+const FarcasterIcon = MdCastle as unknown as React.ComponentType<{ className?: string }>;
+const XIcon = FaXTwitter as unknown as React.ComponentType<{ className?: string }>;
 import sticky_luffy from "../../public/images/sticky_luffy.png";
-import swissdao_red from "../../public/images/swissdao_red.png";
-import swissdao_blue from "../../public/images/swissdao_blue.png";
 import StickyImage from '../components/ui/StickyImage';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import StickyPageHead from '../components/StickyPageHead';
 import StickyLayout from '../components/StickyLayout';
 import { useVideoAndDarkMode } from '../hooks/useVideoAndDarkMode';
+
+const personStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Alex",
+  url: "https://alxstai.com/about",
+  sameAs: [
+    "https://github.com/dragmakex",
+    "https://x.com/alxstai",
+    "https://warpcast.com/alxstai",
+    "https://zurich3.space/"
+  ],
+  jobTitle: "Software Developer",
+  description: "AI x blockchain builder, software engineer, and web3 developer."
+};
 
 export default function About() {
   const { videoOff, darkMode, toggleDarkMode, toggleVideo } = useVideoAndDarkMode();
@@ -26,10 +43,11 @@ export default function About() {
     <>
       <StickyPageHead
         title="about"
-        description="about alex - software developer, blockchain enthusiast, web3 builder"
+        description="About Alex — AI x blockchain builder focused on web3 products, software engineering, and open internet communities."
         ogUrl="https://alxstai.com/about"
         canonicalUrl="https://alxstai.com/about"
-        keywords="about, alex, alxstai, software developer, blockchain, web3, ethereum, defi"
+        keywords="about alex, AI blockchain developer, web3 builder, ethereum, farcaster, zurich3"
+        structuredData={personStructuredData}
       />
       <StickyLayout
         videoOff={videoOff}
@@ -62,11 +80,11 @@ export default function About() {
                   rotateX: -5
                 }}
               >
-                  <StickyImage src={sticky_luffy} alt="alex" fill priority />
+                  <StickyImage src={sticky_luffy} alt="alex" fill priority sizes="(max-width: 640px) 12rem, (max-width: 768px) 14rem, (max-width: 1024px) 16rem, (max-width: 1280px) 18rem, 24rem" />
               </motion.div>
           
               <motion.div
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl flex justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 mt-8"
+            className="flex flex-nowrap items-center justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 mt-8"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 10 }}
             transition={{ duration: 0.7, delay: 0.6 }}
@@ -74,34 +92,40 @@ export default function About() {
                   <a
                     href="https://github.com/dragmakex"
                     target='_blank'
-                    className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'
+                    rel="noopener noreferrer"
+                    aria-label='Visit Alex on GitHub'
+                    className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded'
                   >
-                    <AiFillGithub />
+                    <GithubIcon className='w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16' />
                   </a>
                   <a
                     href="https://warpcast.com/alxstai"
                     target='_blank'
-                    className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'
+                    rel="noopener noreferrer"
+                    aria-label='Visit Alex on Farcaster'
+                    className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded'
                   >
-                    <MdCastle />
+                    <FarcasterIcon className='w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16' />
                   </a>
                   <a
                     href="https://twitter.com/alxstai"
                     target='_blank'
-                    className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'
+                    rel="noopener noreferrer"
+                    aria-label='Visit Alex on X (Twitter)'
+                    className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded'
                   >
-                    <FaXTwitter />
+                    <XIcon className='w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16' />
                   </a>
                   <a
-                    href="https://www.swissdao.space/"
+                    href="https://zurich3.space/"
                     target='_blank'
-                    className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300'
+                    rel="noopener noreferrer"
+                    aria-label='Visit Zurich3'
+                    className='inline-flex items-center justify-center text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded leading-none'
                   >
-                    {darkMode ? (
-                      <StickyImage src={swissdao_blue} alt='swissDAO Logo' className='w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 xl:w-12 xl:h-12'/>
-                    ) : (
-                      <StickyImage src={swissdao_red} alt='swissDAO Logo' className='w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 xl:w-12 xl:h-12'/>
-                    )}
+                    <span className='inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16'>
+                      <img src="/images/z3.svg" alt="z3 Logo" className='w-[140%] h-auto max-w-none' />
+                    </span>
                   </a>
               </motion.div>
         </div>

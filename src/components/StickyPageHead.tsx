@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+type StructuredData = Record<string, any>;
+
 type StickyPageHeadProps = {
   title: string;
   description?: string;
@@ -8,6 +10,7 @@ type StickyPageHeadProps = {
   keywords?: string;
   author?: string;
   canonicalUrl?: string;
+  structuredData?: StructuredData | StructuredData[];
 }
 
 export default function StickyPageHead({
@@ -17,9 +20,11 @@ export default function StickyPageHead({
   ogUrl = "https://alxstai.com",
   keywords = "alex, alxstai, portfolio, developer, blockchain, web3, software engineer, sticky, university, eth zurich, ethereum, defi, smart contracts, react, next.js, typescript",
   author = "alex",
-  canonicalUrl
+  canonicalUrl,
+  structuredData
 }: StickyPageHeadProps) {
   const formattedTitle = title.includes('◦') ? title : `◦ ${title} ◦`;
+  const structuredDataArray = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
 
   return (
     <Head>
@@ -59,6 +64,14 @@ export default function StickyPageHead({
       <link rel="icon" href="/images/favicon.ico" />
       <link rel="shortcut icon" href="/images/favicon.ico" />
       <link rel="apple-touch-icon" href="/images/favicon.ico" />
+
+      {structuredDataArray.map((item, index) => (
+        <script
+          key={`jsonld-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
+        />
+      ))}
     </Head>
   );
 }

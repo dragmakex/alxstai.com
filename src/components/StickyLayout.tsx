@@ -21,6 +21,12 @@ export default function StickyLayout({
   showVideo = true,
   loaded = true
 }: StickyLayoutProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     document.body.className = darkMode ? 'bg-black' : 'bg-gray-300';
 
@@ -40,7 +46,7 @@ export default function StickyLayout({
             toggleDarkMode={toggleDarkMode}
           />
 
-          {showVideo && !videoOff && (
+          {mounted && showVideo && !videoOff && (
             <div className="fixed top-0 left-0 w-full h-full z-[-10]">
               <StickyVideo
                 src='op_bg.mp4'

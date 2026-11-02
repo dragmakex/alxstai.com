@@ -8,9 +8,9 @@ function AppContent({ Component, pageProps, router }: any) {
     <AnimatePresence mode="wait">
       <motion.div
         key={router.pathname}
-        initial={{ opacity: 0, translateY: 10 }}
-        animate={{ opacity: 1, translateY: 0 }}
-        exit={{ opacity: 0, translateY: 10 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
       >
         <Component {...pageProps} />

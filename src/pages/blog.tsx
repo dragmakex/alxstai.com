@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import StickyPost from '../components/StickyPost';
 import StickyWebringBanner from '../components/StickyWebring';
 import StickyPageHead from '../components/StickyPageHead';
@@ -9,11 +8,6 @@ import { useVideoAndDarkMode } from '../hooks/useVideoAndDarkMode';
 export default function Blog() {
   const { videoOff, darkMode, toggleDarkMode, toggleVideo } = useVideoAndDarkMode();
   const [loaded, setLoaded] = useState(false);
-  const { scrollY } = useScroll();
-
-  const blur = useTransform(scrollY, [0, 100], [0, 6]);
-  const scale = useTransform(scrollY, [0, 100], [1, 0.98]);
-  const opacity = useTransform(scrollY, [0, 100], [1, 0.9]);
 
   const [posts] = useState([
     {
@@ -134,13 +128,7 @@ export default function Blog() {
         showVideo={true}
         loaded={loaded}
       >
-            <motion.div
-              style={{
-                filter: blur,
-                scale: scale,
-                opacity: opacity
-              }}
-            >
+            <div>
               <div className="mt-10 mb-20">
                 {posts.map((post, index) => (
                   <StickyPost
@@ -155,7 +143,7 @@ export default function Blog() {
               <div className={`flex justify-center mt-4 p-4 mb-20`}>
                 <StickyWebringBanner theme={darkMode ? 'solarized' : 'ugly'}></StickyWebringBanner>
               </div>
-            </motion.div>
+            </div>
       </StickyLayout>
     </>
   )

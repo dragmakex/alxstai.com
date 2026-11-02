@@ -59,7 +59,7 @@ export default function About() {
       >
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center'>
               <motion.div
-                className={`inset-0 border-4 border-gray-600 dark:border-white flex items-center relative mx-auto rounded-full w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 overflow-hidden dark:bg-gray-400 bg-black ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                className={`inset-0 border-4 border-gray-600 dark:border-white flex items-center relative mx-auto rounded-full size-[min(64vw,17rem)] sm:size-[min(18rem,calc(100vh_-_7rem))] md:size-[min(20rem,calc(100vh_-_7rem))] lg:size-96 xl:size-[26rem] 2xl:size-[30rem] overflow-hidden dark:bg-gray-400 bg-black ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 initial={{ opacity: 0 }}
                 animate={loaded ? {
                   opacity: 1,
@@ -80,7 +80,7 @@ export default function About() {
                   rotateX: -5
                 }}
               >
-                  <StickyImage src={sticky_luffy} alt="alex" fill priority sizes="(max-width: 640px) 12rem, (max-width: 768px) 14rem, (max-width: 1024px) 16rem, (max-width: 1280px) 18rem, 24rem" />
+                  <StickyImage src={sticky_luffy} alt="alex" fill priority sizes="(max-width: 640px) 64vw, (max-width: 768px) 18rem, (max-width: 1024px) 20rem, (max-width: 1280px) 24rem, (max-width: 1536px) 26rem, 30rem" />
               </motion.div>
           
               <motion.div

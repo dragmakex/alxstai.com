@@ -29,10 +29,8 @@ export default function StickyLayout({
 
   useEffect(() => {
     document.body.className = darkMode ? 'bg-black' : 'bg-gray-300';
-
-    return () => {
-      document.body.className = '';
-    };
+    // No cleanup: resetting the class left the body transparent (white) for a
+    // frame on every route change.
   }, [darkMode]);
 
   return (

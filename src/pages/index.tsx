@@ -58,7 +58,7 @@ export default function Home() {
         loaded={loaded}
       >
         <motion.div
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-8xl text-center whitespace-nowrap font-tisa_bold font-bold absolute top-1/2 left-1/2 dark:text-gray-400"
+          className="text-[min(16vw,3.75rem)] sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-8xl text-center whitespace-nowrap font-tisa_bold font-bold absolute top-1/2 left-1/2 dark:text-gray-400"
           initial={{ opacity: 0, x: "-50%", y: "-50%", translateY: -25 }}
           animate={{
             opacity: loaded ? 1 : 0,
@@ -72,8 +72,10 @@ export default function Home() {
           }}
         >
           hi, i'm{' '}
-          <Link href="/about" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded">
-            <span className="hover:text-transparent hover:bg-clip-text active:text-transparent active:bg-clip-text hover:bg-gradient-to-r active:bg-gradient-to-r hover:from-purple-300 hover:via-pink-300 hover:to-indigo-400 active:from-purple-300 active:via-pink-300 active:to-indigo-400 dark:hover:from-purple-400 dark:hover:via-pink-400 dark:hover:to-indigo-500 dark:active:from-purple-400 dark:active:via-pink-400 dark:active:to-indigo-500 transition-all duration-500">alex</span>
+          <Link href="/about" className="group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded">
+            <span className="name-glow">
+              <span className="name-glow-text">alex</span>
+            </span>
           </Link>
         </motion.div>
       </StickyLayout>

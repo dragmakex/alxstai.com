@@ -2,6 +2,12 @@
 @import "tailwindcss";
 
 @layer base {
+  /* Painted before hydration and behind the video, so the first paint and
+     any gap under the fixed video is the page colour, never white. */
+  body {
+    background-color: #d1d5db;
+  }
+
   a:focus-visible,
   button:focus-visible {
     @apply outline-none ring-2 ring-indigo-400 ring-offset-2 ring-offset-gray-300 dark:ring-offset-black;
@@ -16,6 +22,57 @@
     transform: translateY(-10px);
   }
 }
+
+/* "alex" breathes in the hover colours instead of only showing them on hover:
+   the gradient slides across the word and the whole thing brightens and dims.
+   Hover pushes it brighter; the animation sits on the parent so the two never
+   fight over the same property. */
+@keyframes name-breathe {
+  0%, 100% {
+    filter: brightness(0.78);
+  }
+  50% {
+    filter: brightness(1.15) drop-shadow(0 0 14px rgba(216, 180, 254, 0.5));
+  }
+}
+
+@keyframes name-drift {
+  from {
+    background-position: 200% 50%;
+  }
+  to {
+    background-position: 0% 50%;
+  }
+}
+
+.name-glow {
+  display: inline-block;
+  animation: name-breathe 5s ease-in-out infinite;
+}
+
+.name-glow-text {
+  background-image: linear-gradient(90deg, #d8b4fe, #f9a8d4, #818cf8, #f9a8d4, #d8b4fe);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: name-drift 4s linear infinite;
+  transition: filter 0.4s ease;
+}
+
+.group:hover .name-glow-text,
+.group:focus-visible .name-glow-text {
+  filter: brightness(1.3) saturate(1.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .name-glow,
+  .name-glow-text {
+    animation: none;
+  }
+  .name-glow-text {
+    background-position: 50% 50%;
+  }}
 
 @font-face {
   font-family: "op";

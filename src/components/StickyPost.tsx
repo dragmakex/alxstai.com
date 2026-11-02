@@ -12,11 +12,12 @@ function StickyPost({ username, message, timestamp }: StickyPostProps) {
     const ref = useRef<HTMLDivElement | null>(null);
     const safeMessage = message.replace(/target=['"]_blank['"]/g, "target='_blank' rel='noopener noreferrer'");
 
-    // Blurs out as the card scrolls up past the top edge, so posts sink into
-    // the background instead of just disappearing behind the navbar.
+    // Progress runs from "card top hits the viewport top" to "card fully gone",
+    // and the blur only occupies the last third of it — so a long post stays
+    // sharp until roughly two thirds of it has scrolled away.
     const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-    const filter = useTransform(scrollYProgress, [0, 1], ['blur(0px)', 'blur(6px)']);
-    const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
+    const filter = useTransform(scrollYProgress, [0, 0.7, 1], ['blur(0px)', 'blur(0px)', 'blur(6px)']);
+    const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 1, 0.3]);
 
     useEffect(() => {
         const timer = setTimeout(() => {

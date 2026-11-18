@@ -1,10 +1,11 @@
 import { AiFillGithub } from 'react-icons/ai';
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter, FaLinkedin } from "react-icons/fa6";
 import { MdCastle } from "react-icons/md";
 
 const GithubIcon = AiFillGithub as unknown as React.ComponentType<{ className?: string }>;
 const FarcasterIcon = MdCastle as unknown as React.ComponentType<{ className?: string }>;
 const XIcon = FaXTwitter as unknown as React.ComponentType<{ className?: string }>;
+const LinkedinIcon = FaLinkedin as unknown as React.ComponentType<{ className?: string }>;
 import sticky_luffy from "../../public/images/sticky_luffy.png";
 import StickyImage from '../components/ui/StickyImage';
 import { useState, useEffect } from 'react';
@@ -22,7 +23,8 @@ const personStructuredData = {
     "https://github.com/dragmakex",
     "https://x.com/alxstai",
     "https://warpcast.com/alxstai",
-    "https://zurich3.space/"
+    "https://trajectory-ec.ch/",
+    "https://www.linkedin.com/in/alxstai/"
   ],
   jobTitle: "Software Developer",
   description: "AI x blockchain builder, software engineer, and web3 developer."
@@ -46,7 +48,7 @@ export default function About() {
         description="About Alex — AI x blockchain builder focused on web3 products, software engineering, and open internet communities."
         ogUrl="https://alxstai.com/about"
         canonicalUrl="https://alxstai.com/about"
-        keywords="about alex, AI blockchain developer, web3 builder, ethereum, farcaster, zurich3"
+        keywords="about alex, AI blockchain developer, web3 builder, ethereum, farcaster, trajectory"
         structuredData={personStructuredData}
       />
       <StickyLayout
@@ -84,7 +86,7 @@ export default function About() {
               </motion.div>
           
               <motion.div
-            className="flex flex-nowrap items-center justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 mt-8"
+            className="flex flex-nowrap items-center justify-center gap-5 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 mt-8"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 10 }}
             transition={{ duration: 0.7, delay: 0.6 }}
@@ -117,14 +119,23 @@ export default function About() {
                     <XIcon className='w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16' />
                   </a>
                   <a
-                    href="https://zurich3.space/"
+                    href="https://www.linkedin.com/in/alxstai/"
                     target='_blank'
                     rel="noopener noreferrer"
-                    aria-label='Visit Zurich3'
+                    aria-label='Visit Alex on LinkedIn'
+                    className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded'
+                  >
+                    <LinkedinIcon className='w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16' />
+                  </a>
+                  <a
+                    href="https://trajectory-ec.ch/"
+                    target='_blank'
+                    rel="noopener noreferrer"
+                    aria-label='Visit Trajectory'
                     className='inline-flex items-center justify-center text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded leading-none'
                   >
                     <span className='inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16'>
-                      <img src="/images/z3.svg" alt="z3 Logo" className='w-[140%] h-auto max-w-none' />
+                      <img src="/images/trajectory.png" alt="Trajectory Logo" className='w-full h-auto' />
                     </span>
                   </a>
               </motion.div>

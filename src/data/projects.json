@@ -1,0 +1,69 @@
+[
+    {
+        "name": "Uruk",
+        "tagline": "an autonomous research engine, written in rust",
+        "tags": [
+            "rust",
+            "ai",
+            "research"
+        ],
+        "href": "https://urukai.app"
+    },
+    {
+        "name": "Skyage",
+        "tagline": "follow flights on a hand-built 3d globe",
+        "tags": [
+            "kotlin",
+            "android"
+        ],
+        "href": "https://github.com/dragmakex/skyage"
+    },
+    {
+        "name": "Lensly",
+        "tagline": "analytics hub for farcaster mini apps",
+        "tags": [
+            "typescript",
+            "farcaster",
+            "analytics"
+        ],
+        "href": "https://farcaster.xyz/~/mini-apps/launch?domain=lensly.seraphim.zone"
+    },
+    {
+        "name": "Stickystein",
+        "tagline": "ask certain files, get cited answers",
+        "tags": [
+            "next.js",
+            "rag",
+            "postgres"
+        ],
+        "href": "https://stickystein.com"
+    },
+    {
+        "name": "solidity-metrics.nvim",
+        "tagline": "solidity metrics and graphs, inside neovim",
+        "tags": [
+            "lua",
+            "neovim",
+            "solidity"
+        ],
+        "href": "https://github.com/dragmakex/solidity-metrics.nvim"
+    },
+    {
+        "name": "look-away.nvim",
+        "tagline": "the 20-20-20 rule, for neovim",
+        "tags": [
+            "lua",
+            "neovim"
+        ],
+        "href": "https://github.com/dragmakex/look-away.nvim"
+    },
+    {
+        "name": "how-to-code",
+        "tagline": "a compact coding skill and the handbook behind it",
+        "tags": [
+            "typescript",
+            "agents"
+        ],
+        "href": "https://github.com/dragmakex/how-to-code"
+    }
+]

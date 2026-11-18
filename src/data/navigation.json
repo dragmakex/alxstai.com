@@ -1,5 +1,9 @@
 [
     {
+        "tab": "projects",
+        "path": "/projects"
+    },
+    {
         "tab": "about",
         "path": "/about"
     },

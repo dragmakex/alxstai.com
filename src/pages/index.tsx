@@ -14,7 +14,8 @@ const personStructuredData = {
     "https://github.com/dragmakex",
     "https://x.com/alxstai",
     "https://warpcast.com/alxstai",
-    "https://zurich3.space/"
+    "https://trajectory-ec.ch/",
+    "https://www.linkedin.com/in/alxstai/"
   ],
   jobTitle: "Software Developer",
   knowsAbout: ["AI", "Blockchain", "Web3", "TypeScript", "Solidity"]

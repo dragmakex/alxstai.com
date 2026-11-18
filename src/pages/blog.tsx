@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import StickyPost from '../components/StickyPost';
 import StickyWebringBanner from '../components/StickyWebring';
 import StickyPageHead from '../components/StickyPageHead';
@@ -129,6 +130,18 @@ export default function Blog() {
         loaded={loaded}
       >
             <div>
+              <motion.div
+                className="mt-8 md:mt-12"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 12 }}
+                transition={{ duration: 0.7 }}
+              >
+                <h1 className="font-tisa_bold text-4xl md:text-5xl dark:text-gray-400">blog</h1>
+                <p className="mt-3 max-w-xl font-tisa text-black/70 dark:text-gray-500">
+                  short, tweet-like notes on what i build, read, and where i end up.
+                </p>
+              </motion.div>
+
               <div className="mt-10 mb-20">
                 {posts.map((post, index) => (
                   <StickyPost

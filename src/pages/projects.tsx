@@ -46,7 +46,7 @@ export default function Projects() {
         description="Software Alex builds and ships — autonomous research tools, Farcaster apps, Android experiments, and Neovim plugins."
         ogUrl="https://alxstai.com/projects"
         canonicalUrl="https://alxstai.com/projects"
-        keywords="alex projects, alxstai, uruk, lensly, stickystein, skyage, arclet, neovim plugins, farcaster apps"
+        keywords="alex projects, alxstai, uruk, lensly, academitok, stickystein, skyage, neovim plugins, farcaster apps"
         structuredData={projectsStructuredData}
       />
       <StickyLayout
@@ -84,22 +84,42 @@ export default function Projects() {
               >
                 <span className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-purple-300 via-pink-300 to-indigo-400 opacity-0 duration-300 group-hover:opacity-100 dark:from-purple-400 dark:via-pink-400 dark:to-indigo-500" />
 
-                <h2 className="font-tisa_bold text-2xl text-black duration-300 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-indigo-500 group-hover:bg-clip-text md:text-3xl dark:text-gray-400 dark:group-hover:from-purple-300 dark:group-hover:via-pink-300 dark:group-hover:to-indigo-300">
+                <div className="flex items-start justify-between gap-4">
+                  {'logo' in project ? (
+                    <img
+                      src={project.logo}
+                      alt=""
+                      aria-hidden="true"
+                      width={44}
+                      height={44}
+                      className="h-11 w-11 shrink-0 rounded-lg object-contain ring-1 ring-black/10 grayscale opacity-80 duration-300 group-hover:grayscale-0 group-hover:opacity-100 dark:ring-white/10"
+                    />
+                  ) : (
+                    <span
+                      aria-hidden="true"
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#1a1512] text-[24px] leading-none ring-1 ring-black/10 dark:ring-white/10"
+                    >
+                      {project.emoji}
+                    </span>
+                  )}
+                  <span
+                    aria-hidden="true"
+                    className="font-oswald text-xl leading-none text-black/40 duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-black dark:text-gray-500 dark:group-hover:text-gray-400"
+                  >
+                    ↗
+                  </span>
+                </div>
+
+                <h2 className="mt-4 font-tisa_bold text-2xl text-black duration-300 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-indigo-500 group-hover:bg-clip-text md:text-3xl dark:text-gray-400 dark:group-hover:from-purple-300 dark:group-hover:via-pink-300 dark:group-hover:to-indigo-300">
                   {project.name}
                 </h2>
                 <p className="mt-2 font-tisa text-black/70 dark:text-gray-500">
                   {project.tagline}
                 </p>
 
-                <div className="mt-auto flex items-end justify-between gap-4 pt-6">
+                <div className="mt-auto flex items-end justify-between gap-4 pt-5">
                   <span className="font-oswald text-[11px] uppercase tracking-[0.18em] text-black/50 dark:text-gray-500">
                     {project.tags.join(' · ')}
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="font-oswald text-xl leading-none text-black/40 duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-black dark:text-gray-500 dark:group-hover:text-gray-400"
-                  >
-                    ↗
                   </span>
                 </div>
               </motion.a>

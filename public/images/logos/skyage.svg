@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Skyage">
+  <rect width="64" height="64" fill="#111111"/>
+  <g transform="translate(-31,-27.5) scale(1.16667)">
+    <path fill="#3E7BFA" d="M54,28 L64,64 L54,58 L44,64 Z"/>
+    <path fill="#1B3C86" d="M54,46 L78,74 L54,68 L30,74 Z"/>
+  </g>
+</svg>

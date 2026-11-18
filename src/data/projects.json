@@ -7,16 +7,8 @@
             "ai",
             "research"
         ],
-        "href": "https://urukai.app"
-    },
-    {
-        "name": "Skyage",
-        "tagline": "follow flights on a hand-built 3d globe",
-        "tags": [
-            "kotlin",
-            "android"
-        ],
-        "href": "https://github.com/dragmakex/skyage"
+        "href": "https://urukai.app",
+        "logo": "/images/logos/uruk.svg"
     },
     {
         "name": "Lensly",
@@ -26,7 +18,29 @@
             "farcaster",
             "analytics"
         ],
-        "href": "https://farcaster.xyz/~/mini-apps/launch?domain=lensly.seraphim.zone"
+        "href": "https://farcaster.xyz/~/mini-apps/launch?domain=lensly.seraphim.zone",
+        "logo": "/images/logos/lensly.svg"
+    },
+    {
+        "name": "AcademiTok",
+        "tagline": "a tiktok-style feed for academic papers",
+        "tags": [
+            "typescript",
+            "react",
+            "papers"
+        ],
+        "href": "https://github.com/dragmakex/academitok",
+        "logo": "/images/logos/academitok.png"
+    },
+    {
+        "name": "Skyage",
+        "tagline": "follow flights on a hand-built 3d globe",
+        "tags": [
+            "kotlin",
+            "android"
+        ],
+        "href": "https://github.com/dragmakex/skyage",
+        "logo": "/images/logos/skyage.svg"
     },
     {
         "name": "Stickystein",
@@ -36,7 +50,8 @@
             "rag",
             "postgres"
         ],
-        "href": "https://stickystein.com"
+        "href": "https://stickystein.com",
+        "logo": "/images/logos/stickystein.svg"
     },
     {
         "name": "solidity-metrics.nvim",
@@ -46,7 +61,8 @@
             "neovim",
             "solidity"
         ],
-        "href": "https://github.com/dragmakex/solidity-metrics.nvim"
+        "href": "https://github.com/dragmakex/solidity-metrics.nvim",
+        "emoji": "\ud83d\udcca"
     },
     {
         "name": "look-away.nvim",
@@ -55,15 +71,7 @@
             "lua",
             "neovim"
         ],
-        "href": "https://github.com/dragmakex/look-away.nvim"
-    },
-    {
-        "name": "how-to-code",
-        "tagline": "a compact coding skill and the handbook behind it",
-        "tags": [
-            "typescript",
-            "agents"
-        ],
-        "href": "https://github.com/dragmakex/how-to-code"
+        "href": "https://github.com/dragmakex/look-away.nvim",
+        "emoji": "\ud83d\udc40"
     }
 ]

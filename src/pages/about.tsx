@@ -127,17 +127,6 @@ export default function About() {
                   >
                     <LinkedinIcon className='w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16' />
                   </a>
-                  <a
-                    href="https://trajectory-ec.ch/"
-                    target='_blank'
-                    rel="noopener noreferrer"
-                    aria-label='Visit Trajectory'
-                    className='inline-flex items-center justify-center text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded leading-none'
-                  >
-                    <span className='inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16'>
-                      <img src="/images/trajectory.png" alt="Trajectory Logo" className='w-full h-auto' />
-                    </span>
-                  </a>
               </motion.div>
         </div>
       </StickyLayout>

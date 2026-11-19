@@ -5,7 +5,10 @@
 /.pnp
 .pnp.js
 
-# testing
+# local verification and media-generation tooling
+/tests/
+/.pi/
+/media/
 /coverage
 
 # next.js

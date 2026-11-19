@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 400" fill="none">
+  <defs>
+    <linearGradient id="walnut" x1="104" y1="70" x2="335" y2="130" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#bf9570"/><stop offset=".23" stop-color="#9b7050"/><stop offset=".64" stop-color="#624532"/><stop offset="1" stop-color="#372b25"/>
+    </linearGradient>
+    <linearGradient id="cutWood" x1="143" y1="48" x2="294" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#bc9771"/><stop offset=".5" stop-color="#8f6a4a"/><stop offset="1" stop-color="#674b36"/>
+    </linearGradient>
+    <linearGradient id="lowerWood" x1="104" y1="286" x2="338" y2="358" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#af845e"/><stop offset=".35" stop-color="#8b6245"/><stop offset=".8" stop-color="#4f392c"/><stop offset="1" stop-color="#342923"/>
+    </linearGradient>
+    <linearGradient id="rod" x1="144" y1="0" x2="164" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#382e26"/><stop offset=".35" stop-color="#a87a50"/><stop offset=".6" stop-color="#c49b6b"/><stop offset="1" stop-color="#594030"/>
+    </linearGradient>
+    <radialGradient id="crystal" cx="0" cy="0" r="1" gradientTransform="translate(177 158) rotate(48) scale(176 151)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#cff4e5" stop-opacity=".88"/><stop offset=".26" stop-color="#8dd9bb" stop-opacity=".84"/><stop offset=".64" stop-color="#3f9c80" stop-opacity=".9"/><stop offset=".9" stop-color="#1f6556" stop-opacity=".96"/><stop offset="1" stop-color="#153f39"/>
+    </radialGradient>
+    <radialGradient id="glassEdge" cx="0" cy="0" r="1" gradientTransform="translate(220 202) scale(104)" gradientUnits="userSpaceOnUse">
+      <stop offset=".78" stop-color="#a3e7c9" stop-opacity="0"/><stop offset=".95" stop-color="#c4f3de" stop-opacity=".18"/><stop offset="1" stop-color="#ddffec" stop-opacity=".7"/>
+    </radialGradient>
+    <linearGradient id="steel" x1="182" y1="178" x2="257" y2="225" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#eff6df"/><stop offset=".35" stop-color="#bcd3b6"/><stop offset=".5" stop-color="#689d87"/><stop offset=".7" stop-color="#e2eed2"/><stop offset="1" stop-color="#719d84"/>
+    </linearGradient>
+    <linearGradient id="spindle" x1="216" y1="0" x2="225" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#234e42"/><stop offset=".45" stop-color="#b2d9bc"/><stop offset="1" stop-color="#356550"/>
+    </linearGradient>
+    <linearGradient id="glint" x1="147" y1="139" x2="192" y2="231" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f1fff6" stop-opacity=".9"/><stop offset="1" stop-color="#d6f9e6" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grain" width="240" height="42" patternUnits="userSpaceOnUse">
+      <path d="M-20 8C30 0 57 17 110 8S191 3 260 9M-20 18C30 8 58 26 111 17S190 15 260 20M-20 31C24 24 80 37 126 29S206 31 260 28M26 36Q63 23 94 35M151 4Q181 18 218 5" stroke="#33271e" stroke-opacity=".18" stroke-width="1.1"/>
+    </pattern>
+    <clipPath id="topSide"><path d="M106 80C106 118 334 118 334 80V107C334 145 106 145 106 107Z"/></clipPath>
+    <clipPath id="bottomSide"><path d="M104 301C104 342 336 342 336 301V329C336 371 104 371 104 329Z"/></clipPath>
+    <path id="destination" d="M131 105Q220 141 309 105"/>
+    <filter id="objectShadow" x="-30%" y="-20%" width="160%" height="150%"><feDropShadow dx="2" dy="9" stdDeviation="8" flood-color="#111827" flood-opacity=".18"/></filter>
+  </defs>
+
+  <g transform="rotate(17 220 200)" filter="url(#objectShadow)">
+    <!-- Rear frame and its reflection remain visible through the crystal. -->
+    <path d="M285 110L290 296" stroke="#382c24" stroke-width="14" stroke-linecap="round"/>
+    <path d="M283 110L288 296" stroke="#9b7450" stroke-width="7" stroke-linecap="round"/>
+    <ellipse cx="220" cy="113" rx="99" ry="23" fill="#302f28"/>
+    <ellipse cx="220" cy="294" rx="98" ry="25" fill="#263e30" opacity=".65"/>
+
+    <!-- A curved orb, rather than the straight-sided glass of the old drawing. -->
+    <circle cx="220" cy="203" r="104" fill="url(#crystal)" stroke="#25574b" stroke-width="2.2"/>
+    <circle cx="220" cy="203" r="100" stroke="#d1f6de" stroke-opacity=".3" stroke-width="1.3"/>
+    <path d="M286 127C304 162 309 237 286 275" stroke="#badfbc" stroke-opacity=".15" stroke-width="8"/>
+    <ellipse cx="220" cy="280" rx="62" ry="13" fill="#143f35" opacity=".25"/>
+
+    <!-- Suspended spindle, collar, and the two polished faces of the needle. -->
+    <path d="M220 114V281" stroke="url(#spindle)" stroke-width="4"/>
+    <ellipse cx="220" cy="141" rx="22" ry="8" fill="#71ab8c" stroke="#2b5d49" stroke-width="2"/>
+    <ellipse cx="219" cy="139" rx="17" ry="4" stroke="#c5e3c3" stroke-opacity=".6"/>
+    <path d="M214 146L211 190H230L226 146Z" fill="url(#spindle)" stroke="#31634e" stroke-width="1.5"/>
+    <g transform="rotate(-27 220 204)">
+      <path d="M220 195L279 231L225 216L160 177Z" fill="#254f40" opacity=".25" transform="translate(3 8)"/>
+      <path d="M159 174L224 197L281 235L216 213Z" fill="url(#steel)" stroke="#2b5544" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M159 174L221 205L281 235L224 197Z" fill="#c9dfc1"/>
+      <path d="M159 174L221 205L216 213Z" fill="#82b096"/>
+      <path d="M221 205L281 235L216 213Z" fill="#42765e"/>
+      <path d="M221 205L226 161L214 207L208 249Z" fill="#518f71" stroke="#2c5b47" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M221 205L226 161L218 207Z" fill="#b4d9b4"/>
+      <path d="M159 174L221 205L281 235" stroke="#ebf4d9" stroke-width="1.1" stroke-opacity=".85"/>
+      <ellipse cx="220" cy="205" rx="7" ry="5" fill="#355f48"/>
+      <ellipse cx="219" cy="203" rx="5.5" ry="3.5" fill="#d0dfba" stroke="#3b674d" stroke-width="1.2"/>
+    </g>
+
+    <!-- Broad reflections follow the curvature of the orb. -->
+    <path d="M173 122C146 139 134 165 135 193C136 206 142 212 147 205C150 198 148 180 155 162C160 148 171 136 183 128Z" fill="url(#glint)"/>
+    <path d="M159 131C144 146 136 164 134 181" stroke="#f0fff2" stroke-opacity=".9" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M302 178C307 212 298 250 281 269" stroke="#bcead0" stroke-opacity=".58" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M175 291C208 307 257 299 280 279" stroke="#c5f2d4" stroke-opacity=".3" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="220" cy="203" r="104" fill="url(#glassEdge)"/>
+
+    <!-- Bevelled walnut caps, with end grain and engraved destination. -->
+    <path d="M106 80C106 118 334 118 334 80V107C334 145 106 145 106 107Z" fill="url(#walnut)" stroke="#3b2d23" stroke-width="1.8"/>
+    <g clip-path="url(#topSide)"><path d="M100 75H340V145H100Z" fill="url(#grain)"/></g>
+    <ellipse cx="220" cy="80" rx="114" ry="28" fill="url(#cutWood)" stroke="#4c3829" stroke-width="1.8"/>
+    <ellipse cx="220" cy="79" rx="104" ry="22" stroke="#d0ae82" stroke-opacity=".55" stroke-width="1.5"/>
+    <ellipse cx="220" cy="79" rx="83" ry="16" stroke="#4c3829" stroke-opacity=".2"/>
+    <ellipse cx="215" cy="78" rx="57" ry="10" stroke="#4c3829" stroke-opacity=".14"/>
+    <path d="M112 108C134 141 305 141 328 108" stroke="#c29a6d" stroke-opacity=".45" stroke-width="1.5"/>
+    <text fill="#35291f" font-family="Georgia,serif" font-size="16" font-weight="700" letter-spacing="2.6"><textPath href="#destination" startOffset="50%" text-anchor="middle">LAUGH TALE</textPath></text>
+
+    <ellipse cx="220" cy="301" rx="116" ry="30" fill="url(#cutWood)" stroke="#463125" stroke-width="1.8"/>
+    <ellipse cx="220" cy="300" rx="103" ry="23" fill="#684c36" stroke="#b18b60" stroke-opacity=".6"/>
+    <ellipse cx="220" cy="297" rx="89" ry="17" fill="#273e31" fill-opacity=".55" stroke="#3d4530"/>
+    <path d="M104 301C104 342 336 342 336 301V329C336 371 104 371 104 329Z" fill="url(#lowerWood)" stroke="#3b2d23" stroke-width="1.8"/>
+    <g clip-path="url(#bottomSide)"><path d="M100 305H340V370H100Z" fill="url(#grain)"/></g>
+    <path d="M109 329C136 367 307 367 331 329" stroke="#c8a575" stroke-opacity=".38" stroke-width="1.5"/>
+    <path d="M111 304C136 340 307 340 329 304" stroke="#d1ad79" stroke-opacity=".55" stroke-width="1.6"/>
+
+    <!-- Front support is turned wood with restrained carved collars. -->
+    <path d="M154 118V291" stroke="#3b2b22" stroke-width="18" stroke-linecap="round"/>
+    <path d="M154 118V291" stroke="url(#rod)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M151 128V280" stroke="#d1a570" stroke-opacity=".45" stroke-width="1.5" stroke-linecap="round"/>
+    <g fill="#755038" stroke="#3d2c21" stroke-width="1">
+      <ellipse cx="154" cy="132" rx="10" ry="4"/><ellipse cx="154" cy="139" rx="9" ry="3"/>
+      <ellipse cx="154" cy="202" rx="9.5" ry="4"/><ellipse cx="154" cy="209" rx="9" ry="3"/>
+      <ellipse cx="154" cy="278" rx="9.5" ry="4"/><ellipse cx="154" cy="285" rx="10" ry="4"/>
+    </g>
+    <path d="M147 132Q154 135 162 132M147 202Q154 205 162 202M147 278Q154 281 162 278" stroke="#c6a16f" stroke-opacity=".7" stroke-width="1.1"/>
+  </g>
+</svg>

@@ -4,6 +4,10 @@
         "path": "/projects"
     },
     {
+        "tab": "stats",
+        "path": "/stats"
+    },
+    {
         "tab": "about",
         "path": "/about"
     },

@@ -34,7 +34,7 @@ export default function StickyLayout({
   }, [darkMode]);
 
   return (
-    <div className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''}`}>
+    <div data-site-layout className={`${videoOff ? 'videoOff' : ''} ${darkMode ? 'dark' : ''}`}>
       <main className={`px-10 md:px-20 lg:px-40 dark:bg-black ${videoOff && !darkMode ? 'bg-gray-300' : ''}`}>
         <section className="min-h-screen">
           <Navbar

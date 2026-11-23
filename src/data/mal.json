@@ -1,0 +1,240 @@
+{
+  "hours": {
+    "anime": 2107,
+    "manga": 480
+  },
+  "favorites": [
+    {
+      "kind": "anime",
+      "title": "One Piece",
+      "url": "https://myanimelist.net/anime/21/One_Piece",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/anime/1244/138851.jpg?s=18d143b1db40fb5b52905408b23a15f5"
+    },
+    {
+      "kind": "anime",
+      "title": "Fate/Zero 2nd Season",
+      "url": "https://myanimelist.net/anime/11741/Fate_Zero_2nd_Season",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/anime/1522/117645.jpg?s=a27235a9282326bcbf6dbf6894ae7cdb"
+    },
+    {
+      "kind": "anime",
+      "title": "Code Geass: Hangyaku no Lelouch R2",
+      "url": "https://myanimelist.net/anime/2904/Code_Geass__Hangyaku_no_Lelouch_R2",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/anime/1088/135089.jpg?s=646362e1d111fbef57745b093ffd6438"
+    },
+    {
+      "kind": "anime",
+      "title": "Soul Eater",
+      "url": "https://myanimelist.net/anime/3588/Soul_Eater",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/anime/1071/149486.jpg?s=8804dacaca2cbdc96ef8a644561d7128"
+    },
+    {
+      "kind": "manga",
+      "title": "One Piece",
+      "url": "https://myanimelist.net/manga/13/One_Piece",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/manga/2/253146.jpg?s=fc60b48fa790de89f547cb0308f225c6"
+    },
+    {
+      "kind": "manga",
+      "title": "JoJo no Kimyou na Bouken Part 7: Steel Ball Run",
+      "url": "https://myanimelist.net/manga/1706/JoJo_no_Kimyou_na_Bouken_Part_7__Steel_Ball_Run",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/manga/3/179882.jpg?s=8ce0cdada3647a3cfe4b2f8d5a04c64b"
+    },
+    {
+      "kind": "manga",
+      "title": "Fairy Tail Zerø",
+      "url": "https://myanimelist.net/manga/69903/Fairy_Tail_Zerø",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/manga/1/167384.jpg?s=ddde52f961bf96b57cf0181ada2ce040"
+    },
+    {
+      "kind": "character",
+      "title": "Monkey D., Luffy",
+      "url": "https://myanimelist.net/character/40/Luffy_Monkey_D",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/characters/9/310307.jpg?s=d10cc158dc281afac6b67d32b94d3831"
+    },
+    {
+      "kind": "character",
+      "title": "Sanji",
+      "url": "https://myanimelist.net/character/305/Sanji",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/characters/5/136769.jpg?s=f8f621253859406f1feb34ec81a86fd1"
+    },
+    {
+      "kind": "character",
+      "title": "Roronoa, Zoro",
+      "url": "https://myanimelist.net/character/62/Zoro_Roronoa",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/characters/3/100534.jpg?s=46b1973d6cf30f6f7116d6b44969df7c"
+    },
+    {
+      "kind": "character",
+      "title": "Lamperouge, Lelouch",
+      "url": "https://myanimelist.net/character/417/Lelouch_Lamperouge",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/characters/8/406163.jpg?s=f424492b53b6297cc6774cbcdbb24900"
+    },
+    {
+      "kind": "character",
+      "title": "Gilgamesh",
+      "url": "https://myanimelist.net/character/2514/Gilgamesh",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/characters/12/338672.jpg?s=06d706a13f482702f5e3965257aacd99"
+    },
+    {
+      "kind": "character",
+      "title": "Joestar, Joseph",
+      "url": "https://myanimelist.net/character/6356/Joseph_Joestar",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/characters/7/316615.jpg?s=ff918aebcb86a592c743faff87069e4b"
+    },
+    {
+      "kind": "character",
+      "title": "Brando, Dio",
+      "url": "https://myanimelist.net/character/4004/Dio_Brando",
+      "image": "https://cdn.myanimelist.net/r/140x220/images/characters/8/330539.jpg?s=a147f1294a58fcb4bcb6fef68bb93488"
+    }
+  ],
+  "watching": [
+    {
+      "title": "Baki-dou",
+      "url": "https://myanimelist.net/anime/58573/Baki-dou",
+      "episodes": 0,
+      "total": 13
+    },
+    {
+      "title": "Blue Lock vs. U-20 Japan",
+      "url": "https://myanimelist.net/anime/54865/Blue_Lock_vs_U-20_Japan",
+      "episodes": 0,
+      "total": 14
+    },
+    {
+      "title": "Blue Lock: Episode Nagi",
+      "url": "https://myanimelist.net/anime/54866/Blue_Lock__Episode_Nagi",
+      "episodes": 0,
+      "total": 1
+    },
+    {
+      "title": "Dandadan 2nd Season",
+      "url": "https://myanimelist.net/anime/60543/Dandadan_2nd_Season",
+      "episodes": 0,
+      "total": 12
+    },
+    {
+      "title": "Dorohedoro Season 2",
+      "url": "https://myanimelist.net/anime/57779/Dorohedoro_Season_2",
+      "episodes": 0,
+      "total": 11
+    },
+    {
+      "title": "Fate/strange Fake",
+      "url": "https://myanimelist.net/anime/55830/Fate_strange_Fake",
+      "episodes": 0,
+      "total": 13
+    },
+    {
+      "title": "Gintama",
+      "url": "https://myanimelist.net/anime/918/Gintama",
+      "episodes": 0,
+      "total": 201
+    },
+    {
+      "title": "Gintama'",
+      "url": "https://myanimelist.net/anime/9969/Gintama",
+      "episodes": 0,
+      "total": 51
+    },
+    {
+      "title": "Haikyuu!! Movie: Gomisuteba no Kessen",
+      "url": "https://myanimelist.net/anime/52742/Haikyuu_Movie__Gomisuteba_no_Kessen",
+      "episodes": 0,
+      "total": 1
+    },
+    {
+      "title": "Hajime no Ippo",
+      "url": "https://myanimelist.net/anime/263/Hajime_no_Ippo",
+      "episodes": 0,
+      "total": 75
+    },
+    {
+      "title": "Kimetsu no Yaiba Movie 1: Mugenjou-hen - Akaza Sairai",
+      "url": "https://myanimelist.net/anime/59192/Kimetsu_no_Yaiba_Movie_1__Mugenjou-hen_-_Akaza_Sairai",
+      "episodes": 1,
+      "total": 1
+    },
+    {
+      "title": "One Piece",
+      "url": "https://myanimelist.net/anime/21/One_Piece",
+      "episodes": 1107,
+      "total": 0
+    },
+    {
+      "title": "One Piece: Heroines",
+      "url": "https://myanimelist.net/anime/62233/One_Piece__Heroines",
+      "episodes": 0,
+      "total": 1
+    },
+    {
+      "title": "Pluto",
+      "url": "https://myanimelist.net/anime/35737/Pluto",
+      "episodes": 0,
+      "total": 8
+    },
+    {
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
+      "url": "https://myanimelist.net/anime/61316/Re_Zero_kara_Hajimeru_Isekai_Seikatsu_4th_Season",
+      "episodes": 0,
+      "total": 19
+    },
+    {
+      "title": "Sono Bisque Doll wa Koi wo Suru Season 2",
+      "url": "https://myanimelist.net/anime/53065/Sono_Bisque_Doll_wa_Koi_wo_Suru_Season_2",
+      "episodes": 0,
+      "total": 12
+    },
+    {
+      "title": "Tsue to Tsurugi no Wistoria",
+      "url": "https://myanimelist.net/anime/58059/Tsue_to_Tsurugi_no_Wistoria",
+      "episodes": 0,
+      "total": 12
+    },
+    {
+      "title": "Tsue to Tsurugi no Wistoria Season 2",
+      "url": "https://myanimelist.net/anime/59983/Tsue_to_Tsurugi_no_Wistoria_Season_2",
+      "episodes": 0,
+      "total": 12
+    },
+    {
+      "title": "Zankyou no Terror",
+      "url": "https://myanimelist.net/anime/23283/Zankyou_no_Terror",
+      "episodes": 0,
+      "total": 11
+    }
+  ],
+  "activity": [
+    {
+      "title": "Paprika",
+      "url": "https://myanimelist.net/anime/1943/Paprika",
+      "status": "Completed 1 /1 · Scored 8"
+    },
+    {
+      "title": "Kusuriya no Hitorigoto",
+      "url": "https://myanimelist.net/anime/54492/Kusuriya_no_Hitorigoto",
+      "status": "Plan to Watch · Scored -"
+    },
+    {
+      "title": "Ashita no Joe",
+      "url": "https://myanimelist.net/anime/2402/Ashita_no_Joe",
+      "status": "Plan to Watch · Scored -"
+    },
+    {
+      "title": "One Piece",
+      "url": "https://myanimelist.net/manga/13/One_Piece",
+      "status": "Completed 1117 /? · Scored 10"
+    },
+    {
+      "title": "Solo Leveling",
+      "url": "https://myanimelist.net/manga/121496/Solo_Leveling",
+      "status": "Completed 201 /201 · Scored 7"
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 9: The JoJoLands",
+      "url": "https://myanimelist.net/manga/139629/JoJo_no_Kimyou_na_Bouken_Part_9__The_JoJoLands",
+      "status": "Plan to Read · Scored -"
+    }
+  ]
+}

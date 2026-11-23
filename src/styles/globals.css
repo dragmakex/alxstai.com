@@ -14,6 +14,18 @@
   }
 }
 
+@media (max-width: 1023px) {
+  /* Centered pages must also clear the expanded, in-flow mobile menu. */
+  [data-site-layout]:has(button[aria-expanded="true"]) [data-centered-page] {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none !important;
+    translate: none;
+    margin: 2rem 0 3rem;
+  }
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);

@@ -17,7 +17,7 @@ import { useVideoAndDarkMode } from '../hooks/useVideoAndDarkMode';
 const personStructuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Alex",
+  name: "alex",
   url: "https://alxstai.com/about",
   sameAs: [
     "https://github.com/dragmakex",
@@ -26,8 +26,8 @@ const personStructuredData = {
     "https://trajectory-ec.ch/",
     "https://www.linkedin.com/in/alxstai/"
   ],
-  jobTitle: "Software Developer",
-  description: "AI x blockchain builder, software engineer, and web3 developer."
+  jobTitle: "Founder",
+  description: "AI x blockchain builder and researcher"
 };
 
 export default function About() {
@@ -45,10 +45,10 @@ export default function About() {
     <>
       <StickyPageHead
         title="about"
-        description="About Alex — AI x blockchain builder focused on web3 products, software engineering, and open internet communities."
+        description="about alex / sticky"
         ogUrl="https://alxstai.com/about"
         canonicalUrl="https://alxstai.com/about"
-        keywords="about alex, AI blockchain developer, web3 builder, ethereum, farcaster, trajectory"
+        keywords="about alex, AI blockchain developer, web3 builder, ethereum, farcaster, trajectory, autonomous systems, robotics, AI agents"
         structuredData={personStructuredData}
       />
       <StickyLayout
@@ -59,7 +59,7 @@ export default function About() {
         showVideo={true}
         loaded={loaded}
       >
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center'>
+        <div data-centered-page className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center'>
               <motion.div
                 className={`inset-0 border-4 border-gray-600 dark:border-white flex items-center relative mx-auto rounded-full size-[min(64vw,17rem)] sm:size-[min(18rem,calc(100vh_-_7rem))] md:size-[min(20rem,calc(100vh_-_7rem))] lg:size-96 xl:size-[26rem] 2xl:size-[30rem] overflow-hidden dark:bg-gray-400 bg-black ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 initial={{ opacity: 0 }}
@@ -95,7 +95,7 @@ export default function About() {
                     href="https://github.com/dragmakex"
                     target='_blank'
                     rel="noopener noreferrer"
-                    aria-label='Visit Alex on GitHub'
+                    aria-label='Visit alex on GitHub'
                     className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded'
                   >
                     <GithubIcon className='w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16' />
@@ -104,7 +104,7 @@ export default function About() {
                     href="https://warpcast.com/alxstai"
                     target='_blank'
                     rel="noopener noreferrer"
-                    aria-label='Visit Alex on Farcaster'
+                    aria-label='Visit alex on Farcaster'
                     className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded'
                   >
                     <FarcasterIcon className='w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16' />
@@ -113,7 +113,7 @@ export default function About() {
                     href="https://twitter.com/alxstai"
                     target='_blank'
                     rel="noopener noreferrer"
-                    aria-label='Visit Alex on X (Twitter)'
+                    aria-label='Visit alex on X (Twitter)'
                     className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded'
                   >
                     <XIcon className='w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16' />
@@ -122,7 +122,7 @@ export default function About() {
                     href="https://www.linkedin.com/in/alxstai/"
                     target='_blank'
                     rel="noopener noreferrer"
-                    aria-label='Visit Alex on LinkedIn'
+                    aria-label='Visit alex on LinkedIn'
                     className='text-gray-900 dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded'
                   >
                     <LinkedinIcon className='w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16' />

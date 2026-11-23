@@ -8,7 +8,7 @@ import { useVideoAndDarkMode } from '../hooks/useVideoAndDarkMode';
 const personStructuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Alex",
+  name: "alex",
   url: "https://alxstai.com",
   sameAs: [
     "https://github.com/dragmakex",
@@ -17,8 +17,8 @@ const personStructuredData = {
     "https://trajectory-ec.ch/",
     "https://www.linkedin.com/in/alxstai/"
   ],
-  jobTitle: "Software Developer",
-  knowsAbout: ["AI", "Blockchain", "Web3", "TypeScript", "Solidity"]
+  jobTitle: "Founder",
+  knowsAbout: ["AI", "Blockchain", "Web3", "TypeScript", "Solidity", "Rust"]
 };
 
 const websiteStructuredData = {
@@ -26,7 +26,7 @@ const websiteStructuredData = {
   "@type": "WebSite",
   name: "alxstai",
   url: "https://alxstai.com",
-  description: "Personal website of Alex, building at the intersection of AI and blockchain."
+  description: "my home"
 };
 
 export default function Home() {
@@ -44,7 +44,7 @@ export default function Home() {
     <>
       <StickyPageHead
         title="alxstai"
-        description="Alex builds AI x blockchain products, ships web3 software, and documents experiments in public."
+        description="building AI x blockchain products and whatever else I feel like"
         ogUrl="https://alxstai.com"
         canonicalUrl="https://alxstai.com"
         keywords="alex, alxstai, AI blockchain developer, web3 engineer, ethereum, farcaster, projects"
@@ -59,6 +59,7 @@ export default function Home() {
         loaded={loaded}
       >
         <motion.div
+          data-centered-page
           className="text-[min(16vw,3.75rem)] sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-8xl text-center whitespace-nowrap font-tisa_bold font-bold absolute top-1/2 left-1/2 dark:text-gray-400"
           initial={{ opacity: 0, x: "-50%", y: "-50%", translateY: -25 }}
           animate={{

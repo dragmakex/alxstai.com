@@ -40,7 +40,7 @@
 .eternalPose { margin-left: auto; }
 .eternalPose picture { bottom: 0; display: flex; align-items: flex-end; justify-content: flex-end; }
 .eternalPose .logPose { width: auto; height: auto; max-width: 100%; max-height: 100%; transform: rotate(14deg); }
-.year, .award, .totals dt, .reportYears, .homeCountries > span, .legend, .footer, .languages li span {
+.year, .award, .totals dt, .reportYears, .homeCountries > span, .legend, .languages li span {
   font-family: oswald, sans-serif;
   font-weight: 400;
 }
@@ -54,7 +54,12 @@
 .partners { padding: 2rem 0; border-bottom: 1px solid var(--line); }
 .partners > h2 { padding: 0 3rem; font-size: 1.4em; }
 .partners em { display: inline-block; padding-bottom: .1em; }
-.sectionTop { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.header p, .logbook p, .logbook dt { color: var(--muted); }
+.logbook :is(h2, h3) { color: var(--ink); }
+.logbook details > summary { display: flex; align-items: center; gap: .65em; cursor: pointer; list-style: none; }
+.logbook summary::-webkit-details-marker { display: none; }
+.logbook summary::before { content: ''; flex: none; width: 1.35em; height: 1.35em; background: url('/images/dragon.png') center / contain no-repeat; }
+.logbook details[open] > summary::before { transform: rotate(90deg); }
 .marquees { margin-top: 1.5rem; }
 .marquee { overflow: hidden; mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
 .track { display: flex; width: max-content; animation: sail 60s linear infinite; }
@@ -148,7 +153,7 @@
 .communityNumber { font: 2em/1.2 oswald, sans-serif; white-space: nowrap; }
 .communityItem h3 { font-size: 1em; }
 .communityItem p { margin-top: .3rem; font-size: .8em; color: var(--muted); }
-.footer { display: flex; justify-content: flex-end; padding: 1.5rem 3rem; border-top: 1px solid var(--line); font-size: .8em; color: var(--muted); }
+.lensly > a { display: inline-block; margin-top: 1rem; }
 :global(.dark) .page { --ink: #d1d5db; --muted: #9ca3af; --line: #374151; --paper: #111827; --surface: #1f2937; }
 :global(.dark) .track img { filter: brightness(0) invert(1) opacity(.7); }
 :global(.dark) .track a:hover img, :global(.dark) .track a:focus-visible img { filter: brightness(0) invert(1); }
@@ -193,7 +198,6 @@
   .countryList ul { grid-template-columns: repeat(2, 1fr); }
   .languages, .communities { padding: 2rem 1.25rem; }
   .languages { border-right: 0; border-bottom: 1px solid var(--line); }
-  .footer { padding: 1.5rem 1.25rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cameoSlot { display: none; }

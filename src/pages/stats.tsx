@@ -1,5 +1,7 @@
 import StickyPageHead from '../components/StickyPageHead';
 import StickyLayout from '../components/StickyLayout';
+import ArrowLink from '../components/ui/ArrowLink';
+import AnimeLog from '../components/AnimeLog';
 import GitHubActivity from '../components/GitHubActivity';
 import { useVideoAndDarkMode } from '../hooks/useVideoAndDarkMode';
 import stats from '../data/stats.json';
@@ -17,7 +19,7 @@ export default function Stats() {
     <>
       <StickyPageHead
         title="stats"
-        description="Alex in numbers: hackathon awards, games, communities, languages, and a world map of the adventure so far."
+        description="all my numbers on this adventure"
         ogUrl="https://alxstai.com/stats"
         canonicalUrl="https://alxstai.com/stats"
         keywords="alex stats, alxstai, hackathons, ETH game lab, Lensly, Crypto Valley, travel"
@@ -25,14 +27,14 @@ export default function Stats() {
       <StickyLayout {...settings}>
         <div className={styles.page}>
           <header className={styles.header}>
-            <h1 className="font-tisa_bold text-4xl md:text-5xl dark:text-gray-400">stats</h1>
-            <p className="mt-3 font-tisa text-black/70 dark:text-gray-400">some numbers, lots of side quests</p>
+            <h1 className="font-tisa_bold">stats</h1>
+            <p className="mt-3">some numbers, lots of side quests</p>
           </header>
 
           <div className={styles.logbook}>
             <section className={styles.intro} aria-labelledby="adventure-title">
               <div className={styles.introCopy}>
-                <h2 id="adventure-title">building things.<br />following my own path.</h2>
+                <h2 id="adventure-title"><span className="name-glow"><span className="name-glow-text">building</span></span> things.<br />following my own <span className="name-glow"><span className="name-glow-text">path</span></span>.</h2>
                 <div className={styles.eternalPose} aria-hidden="true">
                   <picture>
                     <img className={styles.logPose} src="/images/eternal-log-pose.webp" alt="" width="1024" height="1257" />
@@ -70,10 +72,8 @@ export default function Stats() {
               </div>
             </section>
 
-            <section className={styles.section} aria-labelledby="awards-title">
-              <div className={styles.sectionTop}>
-                <h2 id="awards-title">some competitions</h2>
-              </div>
+            <details open className={styles.section}>
+              <summary><h2>some competitions</h2></summary>
               <div className={styles.awardsGrid}>
                 <div className={styles.hackathons}>
                   <ol>
@@ -107,21 +107,22 @@ export default function Stats() {
                   <a className={styles.videoLink} href="https://www.youtube.com/watch?v=7cGiY-7hZrk" target="_blank" rel="noopener noreferrer">watch on YouTube <span aria-hidden="true">↗</span></a>
                 </article>
               </div>
-            </section>
+            </details>
 
-            <section className={styles.impact} aria-labelledby="impact-title">
-              <h2 id="impact-title">built for the real world</h2>
+            <details open className={styles.impact}>
+              <summary><h2>built for the real world</h2></summary>
               <div className={styles.impactGrid}>
                 <article className={styles.lensly}>
-                  <a href="https://farcaster.xyz/~/mini-apps/launch?domain=lensly.seraphim.zone" target="_blank" rel="noopener noreferrer" className={styles.productLink}>
+                  <div className={styles.productLink}>
                     <img src="/images/logos/lensly.svg" alt="" width="34" height="34" />
-                    <h3>Lensly</h3><span aria-hidden="true">↗</span>
-                  </a>
+                    <h3>Lensly</h3>
+                  </div>
                   <dl className={styles.lenslyNumbers}>
                     <div><dt>users</dt><dd>20k+</dd></div>
                     <div><dt>events logged</dt><dd>180k+</dd></div>
                   </dl>
                   <p>Used by Vitalik and Farcaster co-founders Dan Romero and Varun Srinivasan.</p>
+                  <ArrowLink external href="https://farcaster.xyz/~/mini-apps/launch?domain=lensly.seraphim.zone">open Lensly</ArrowLink>
                 </article>
                 <article className={styles.reports}>
                   <span className={styles.reportYears}>2025 + 2026</span>
@@ -130,14 +131,13 @@ export default function Stats() {
                   <a href="https://www.cvvc.com/insights" target="_blank" rel="noopener noreferrer">explore the reports <span aria-hidden="true">↗</span></a>
                 </article>
               </div>
-            </section>
+            </details>
 
             <GitHubActivity />
+            <AnimeLog />
 
-            <section className={styles.section} aria-labelledby="travel-title">
-              <div className={styles.sectionTop}>
-                <h2 id="travel-title">traveling around the world</h2>
-              </div>
+            <details open className={styles.section}>
+              <summary><h2>traveling around the world</h2></summary>
               <figure className={styles.mapFigure}>
                 <svg viewBox="0 0 900 365" role="img" aria-label="World travel map" aria-describedby="map-description" className={styles.map}>
                   <desc id="map-description">{visited.size} countries explored. Visited countries are indigo; Bulgaria, Germany, USA, Switzerland, and France, where I’ve lived, are pink. A full country list follows the map.</desc>
@@ -163,26 +163,25 @@ export default function Stats() {
                 <summary>all {visited.size} countries explored</summary>
                 <ul>{stats.countries.map(country => <li key={country.code}>{country.name}</li>)}</ul>
               </details>
-            </section>
+            </details>
 
             <div className={styles.bottomGrid}>
-              <section className={styles.languages} aria-labelledby="languages-title">
-                <h2 id="languages-title">talk to me in</h2>
+              <details open className={styles.languages}>
+                <summary><h2>talk to me in</h2></summary>
                 <ul>{stats.languages.map(language => (
                   <li key={language.name}>
                     <div><label htmlFor={`language-${language.name}`}>{language.name}</label><span>{language.level}</span></div>
                     <meter id={`language-${language.name}`} min="0" max="100" value={language.fill} aria-valuetext={language.level}>{language.level}</meter>
                   </li>
                 ))}</ul>
-              </section>
-              <section className={styles.communities} aria-labelledby="communities-title">
-                <h2 id="communities-title">better with a crew</h2>
+              </details>
+              <details open className={styles.communities}>
+                <summary><h2>better with a crew</h2></summary>
                 <div className={styles.communityItem}><span className={styles.communityNumber}>02</span><div><h3>communities in Zurich</h3><p>Helped build as a core contributor.</p><p><a href="https://zurich3.space/" target="_blank" rel="noopener noreferrer">zurich3.space ↗</a><br /><a href="https://swissdao.space/" target="_blank" rel="noopener noreferrer">swissdao.space ↗</a></p></div></div>
                 <div className={styles.communityItem}><span className={styles.communityNumber}>00</span><div><h3>Trajectory · cohort 0</h3><p>ETH Entrepreneur Club’s founder programme.</p></div></div>
                 <div className={styles.communityItem}><span className={styles.communityNumber}>2×</span><div><h3>START Foundation</h3><p>Hacker house participant.</p></div></div>
-              </section>
+              </details>
             </div>
-            <footer className={styles.footer}><a href="/projects">see what i’m building <span aria-hidden="true">↗</span></a></footer>
           </div>
         </div>
       </StickyLayout>

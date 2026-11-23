@@ -81,12 +81,12 @@ export default function Blog() {
   const blogStructuredData = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "Alex's Blog",
+    name: "alex's Blog",
     url: "https://alxstai.com/blog",
-    description: "Updates on AI x blockchain, web3 building, and personal progress logs.",
+    description: "little tweet-like notes",
     author: {
       "@type": "Person",
-      name: "Alex",
+      name: "alex",
       url: "https://alxstai.com/about"
     }
   };
@@ -115,7 +115,7 @@ export default function Blog() {
     <>
       <StickyPageHead
         title="blog"
-        description="Alex's AI x blockchain devlog — web3 experiments, product updates, conference notes, and builder life."
+        description={blogStructuredData.description}
         ogUrl="https://alxstai.com/blog"
         canonicalUrl="https://alxstai.com/blog"
         keywords="alex blog, AI blockchain, web3 devlog, ethereum, farcaster, startup updates"
@@ -138,7 +138,7 @@ export default function Blog() {
               >
                 <h1 className="font-tisa_bold text-4xl md:text-5xl dark:text-gray-400">blog</h1>
                 <p className="mt-3 max-w-xl font-tisa text-black/70 dark:text-gray-500">
-                  short, tweet-like notes on what i build, read, and where i end up.
+                  short, tweet-like notes on what i build, read and where i end up.
                 </p>
               </motion.div>
 

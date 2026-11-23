@@ -40,8 +40,8 @@ export default function GitHubActivity() {
   }, []);
 
   return (
-    <section className={`${styles.section} ${styles.githubActivity}`} aria-labelledby="github-activity-title">
-      <h2 id="github-activity-title">GitHub activity</h2>
+    <details open className={`${styles.section} ${styles.githubActivity}`}>
+      <summary><h2 id="github-activity-title">GitHub activity</h2></summary>
       <p className={styles.githubTotals}>
         <strong>{activity.totalContributions.toLocaleString('en')}</strong> contributions in {activity.year}
       </p>
@@ -56,6 +56,6 @@ export default function GitHubActivity() {
       <div className={styles.githubFooter}>
         <a href="https://github.com/dragmakex" target="_blank" rel="noopener noreferrer">github.com/dragmakex <span aria-hidden="true">↗</span></a>
       </div>
-    </section>
+    </details>
   );
 }

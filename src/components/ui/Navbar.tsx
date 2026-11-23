@@ -29,11 +29,11 @@ function Navbar(props: NavbarProps) {
       
     return (
         <div className="">
-            <nav className={`py-6 mb-8 md:py-10 md:mb-2 2xl:mb-10 2xl:py-18 flex justify-between transition-all duration-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}> 
+            <nav className={`py-6 mb-8 md:py-10 md:mb-2 2xl:mb-10 2xl:py-18 flex flex-wrap items-start justify-between lg:flex-nowrap lg:items-center transition-all duration-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 <Link href="/" className='text-3xl font-tisa font-bold dark:text-gray-400 hover:text-white active:text-white dark:hover:text-white dark:active:text-white duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300 dark:focus-visible:ring-offset-black rounded'>
                     alxstai
                 </Link>
-                <ul className='flex items-center'>
+                <ul className='flex items-start pt-1 lg:items-center lg:pt-0'>
                     <li className='flex px-2'>
                         {props.videoOff && props.darkMode && (
                             <button

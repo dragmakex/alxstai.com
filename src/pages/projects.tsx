@@ -2,18 +2,19 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import StickyPageHead from '../components/StickyPageHead';
 import StickyLayout from '../components/StickyLayout';
+import ArrowLink from '../components/ui/ArrowLink';
 import { useVideoAndDarkMode } from '../hooks/useVideoAndDarkMode';
 import projects from '../data/projects.json';
 
 const projectsStructuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Alex's Projects",
+  name: "alex's Projects",
   url: "https://alxstai.com/projects",
-  description: "Software Alex builds and ships — research tools, Farcaster apps, and Neovim plugins.",
+  description: "building autonomous systems, apps, Neovim plugins and whatever else I like",
   author: {
     "@type": "Person",
-    name: "Alex",
+    name: "alex",
     url: "https://alxstai.com/about"
   },
   mainEntity: {
@@ -43,7 +44,7 @@ export default function Projects() {
     <>
       <StickyPageHead
         title="projects"
-        description="Software Alex builds and ships — autonomous research tools, Farcaster apps, Android experiments, and Neovim plugins."
+        description={projectsStructuredData.description}
         ogUrl="https://alxstai.com/projects"
         canonicalUrl="https://alxstai.com/projects"
         keywords="alex projects, alxstai, uruk, lensly, academitok, stickystein, skyage, neovim plugins, farcaster apps"
@@ -65,7 +66,7 @@ export default function Projects() {
           >
             <h1 className="font-tisa_bold text-4xl md:text-5xl dark:text-gray-400">projects</h1>
             <p className="mt-3 max-w-xl font-tisa text-black/70 dark:text-gray-500">
-              things i build and ship. some are live products, some are tools i use every day.
+              things i build and ship. some are live products and some are just cool tools.
             </p>
           </motion.div>
 
@@ -102,12 +103,7 @@ export default function Projects() {
                       {project.emoji}
                     </span>
                   )}
-                  <span
-                    aria-hidden="true"
-                    className="font-oswald text-xl leading-none text-black/40 duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-black dark:text-gray-500 dark:group-hover:text-gray-400"
-                  >
-                    ↗
-                  </span>
+                  <img src="/images/dragon.png" alt="" width="22" height="22" className="size-[22px] shrink-0 object-contain" />
                 </div>
 
                 <h2 className="mt-4 font-tisa_bold text-2xl text-black duration-300 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-indigo-500 group-hover:bg-clip-text md:text-3xl dark:text-gray-400 dark:group-hover:from-purple-300 dark:group-hover:via-pink-300 dark:group-hover:to-indigo-300">
@@ -132,15 +128,9 @@ export default function Projects() {
             transition={{ duration: 0.7, delay: 0.7 }}
             className="mt-10"
           >
-            <a
-              href="https://github.com/dragmakex?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-b border-transparent font-oswald text-xs uppercase tracking-[0.18em] text-black/60 duration-300 hover:border-black hover:text-black dark:text-gray-500 dark:hover:border-gray-400 dark:hover:text-gray-400 rounded"
-            >
+            <ArrowLink href="https://github.com/dragmakex?tab=repositories" external>
               everything else on github
-              <span aria-hidden="true">↗</span>
-            </a>
+            </ArrowLink>
           </motion.div>
         </div>
       </StickyLayout>
